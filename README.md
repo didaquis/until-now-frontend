@@ -7,17 +7,26 @@ Until Now te ayuda a gestionar la fecha de renovación del material técnico. La
 
 
 ## Documentación del proyecto
-[Kanban](https://trello.com/b/x0Vl2LAY/until-now)
+
+Estructura de la base de datos:
+![Base de datos](documentation/database.png)
+
+Arquitectura del proyecto:
+![Arquitectura](documentation/main.png)
 
 
 ## Sprint Planning
 
+Gestión de tareas: [Kanban](https://trello.com/b/x0Vl2LAY/until-now)  
+
+------ 
+
 ### Sprint primera semana
 #### Lunes
-- [ ] Definir modelos de datos
+- [x] Definir modelos de datos
 - [ ] Realizar mockups de las vistas
-- [ ] Hacer mapa de la relación de collecciones de la base de datos
-- [ ] Definir la estructura del proyecto
+- [x] Hacer mapa de la relación de collecciones de la base de datos
+- [x] Definir la estructura del proyecto
 - [ ] Web Templating
 #### Martes
 - [ ] Solicitar feedback templating
