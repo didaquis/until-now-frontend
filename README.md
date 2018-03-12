@@ -17,8 +17,8 @@ Arquitectura del proyecto:
 ![Arquitectura](documentation/main.png)  
 
 Puedes ver los mockups iniciales en:  
-[Mockup lista colecciones](documentation/mockup_1.png)
-[Mockup lista items](documentation/mockup_2.png)
+[Mockup lista colecciones](documentation/mockup_1.png)  
+[Mockup lista items](documentation/mockup_2.png)  
 
 ## Sprint Planning
 
