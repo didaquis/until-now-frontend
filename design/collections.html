@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="theme-color" content="#000000">
+	<link rel="stylesheet" href="vendor/bootstrap-4.0.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="vendor/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="vendor/shards-2.0.1/css/shards.min.css?v=2.0.1">
+	<link rel="stylesheet" href="styles/main.css">
+	<title>Until now</title>
+</head>
+
+<body>
+	<noscript>
+		You need to enable JavaScript to run this app.
+	</noscript>
+
+	<div class="container-fluid  p-4">
+
+
+		<!-- Navbar -->
+		<div class="row mb-8">
+			<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+				<a class="navbar-brand" href="index.html">Until Now</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
+				 aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarCollapse">
+					<ul class="navbar-nav mr-auto">
+						<li class="nav-item">
+							<a class="nav-link active" href="collections.html">Collections</a>
+						</li>
+					</ul>
+					<form class="form-inline mt-2 mt-md-0">
+						<button class="btn btn-light my-2 my-sm-0" type="submit">Logout</button>
+					</form>
+				</div>
+			</nav>
+		</div>
+
+
+
+		<!-- header -->
+		<div class="row">
+			<div class="col">
+				<h2 class="text-center mb-4">Collections</h2>
+			</div>
+		</div>
+
+
+
+		<!-- Panel for new data -->
+		<div class="row">
+			<div class="col-md-8 offset-md-2">
+				<div class="card">
+					<div class="card-body">
+						<h4 class="card-title">Add new collection</h4>
+						<form>
+							<div class="form-group">
+								<label for="nameCollectionInput">Name of collection</label>
+								<input type="text" class="form-control" id="nameCollectionInput" aria-describedby="nameCollectionHelp" placeholder="Enter name of collection"
+								 required pattern="[A-Za-z0-9.\-_\*\/\|]{3,}">
+								<small id="nameCollectionHelp" class="form-text text-muted">At least 3 chars</small>
+							</div>
+							<a href="#" class="btn btn-secondary" data-dismiss="modal">Close</a>
+							<button type="submit" class="btn btn-success float-right">Create</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+		<!-- button for new data -->
+		<div class="row">
+			<div class="col">
+				<button type="button" class="btn btn-success">New Collection</button>
+			</div>
+		</div>
+
+		<!-- separator -->
+		<div class="row">
+			<div class="col">
+				<hr>
+			</div>
+		</div>
+
+
+
+
+		<!-- modal for delete collections -->
+		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">Delete</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<p>Are you sure you want to delete this collection?
+							<br /> All the items included in the collection will be deleted!
+						</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary mr-auto" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-danger">Delete</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+		<!-- list of collections -->
+		<div class="row">
+			<div class="col-lg-4 col-md-6 col-sm-12 mb-5">
+				<div class="media">
+					<div class="media-body">
+						<div class="d-inline-block">
+							<h4 class="mt-2">Lorem impsum dolor</h4>
+						</div>
+						<div class="d-inline-block">
+							<small>
+								<span class="float-right ml-3 badge badge-pill badge-dark">&nbsp;7&nbsp;</span>
+							</small>
+						</div>
+						<br />
+						<button type="button" class="btn btn-danger btn-sm mr-2" data-toggle="modal" data-target="#exampleModal">Delete collection</button>
+						<a href="items.html" class="btn btn-primary btn-sm">View Items</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-4 col-md-6 col-sm-12 mb-5">
+				<div class="media">
+					<div class="media-body">
+						<div class="d-inline-block">
+							<h4 class="mt-2">Lorem impsum dolor</h4>
+						</div>
+						<div class="d-inline-block">
+							<small>
+								<span class="float-right ml-3 badge badge-pill badge-dark">&nbsp;7&nbsp;</span>
+							</small>
+						</div>
+						<br />
+						<button type="button" class="btn btn-danger btn-sm mr-2" data-toggle="modal" data-target="#exampleModal">Delete collection</button>
+						<a href="items.html" class="btn btn-primary btn-sm">View Items</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-4 col-md-6 col-sm-12 mb-5">
+				<div class="media">
+					<div class="media-body">
+						<div class="d-inline-block">
+							<h4 class="mt-2">Lorem impsum</h4>
+						</div>
+						<div class="d-inline-block">
+							<small>
+								<span class="float-right ml-3 badge badge-pill badge-dark">&nbsp;7&nbsp;</span>
+							</small>
+						</div>
+						<br />
+						<button type="button" class="btn btn-danger btn-sm mr-2" data-toggle="modal" data-target="#exampleModal">Delete collection</button>
+						<a href="items.html" class="btn btn-primary btn-sm">View Items</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-4 col-md-6 col-sm-12 mb-5">
+				<div class="media">
+					<div class="media-body">
+						<div class="d-inline-block">
+							<h4 class="mt-2">Lorem impsum dolor</h4>
+						</div>
+						<div class="d-inline-block">
+							<small>
+								<span class="float-right ml-3 badge badge-pill badge-dark">&nbsp;7&nbsp;</span>
+							</small>
+						</div>
+						<br />
+						<button type="button" class="btn btn-danger btn-sm mr-2" data-toggle="modal" data-target="#exampleModal">Delete collection</button>
+						<a href="items.html" class="btn btn-primary btn-sm">View Items</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-4 col-md-6 col-sm-12 mb-5">
+				<div class="media">
+					<div class="media-body">
+						<div class="d-inline-block">
+							<h4 class="mt-2">Lorem impsum dolor</h4>
+						</div>
+						<div class="d-inline-block">
+							<small>
+								<span class="float-right ml-3 badge badge-pill badge-dark">&nbsp;7&nbsp;</span>
+							</small>
+						</div>
+						<br />
+						<button type="button" class="btn btn-danger btn-sm mr-2" data-toggle="modal" data-target="#exampleModal">Delete collection</button>
+						<a href="items.html" class="btn btn-primary btn-sm">View Items</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<!-- No data yet -->
+		<div class="row">
+			<div class="col">
+				<h4 class="text-center">You don't have data yet</h4>
+			</div>
+		</div>
+
+
+		<!-- footer -->
+		<footer class="container mt-7">
+			<nav class="navbar fixed-bottom navbar-dark bg-dark">
+				<div class="col text-center">
+					<small class="text-light">Made by Dídac García</small>
+					<a href="https://twitter.com/didaquis" target="_blank" title="didaquis en Twitter">
+						<i class="fa fa-twitter fa-lg mr-2 ml-2"></i>
+					</a>
+					<a href="https://github.com/didaquis" target="_blank" title="didaquis en GitHub">
+						<i class="fa fa-github fa-lg mr-2 ml-2"></i>
+					</a>
+				</div>
+			</nav>
+		</footer>
+
+
+	</div>
+
+	<script src="vendor/jquery/jquery-3.2.1.slim.min.js"></script>
+	<script src="vendor/popper-1.12.9/popper.min.js"></script>
+	<script src="vendor/bootstrap-4.0.0/js/bootstrap.min.js"></script>
+	<script src="vendor/shards-2.0.1/js/shards.min.js"></script>
+</body>
+
+</html>
