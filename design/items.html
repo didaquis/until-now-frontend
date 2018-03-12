@@ -51,6 +51,49 @@
 		</div>
 
 
+
+		<!-- Panel for new data -->
+		<div class="row">
+			<div class="col-md-8 offset-md-2">
+				<div class="card">
+					<div class="card-body">
+						<h4 class="card-title">Add new Items</h4>
+						<form>
+							<div class="form-row">
+								<div class="form-group col-lg-6 col-md-12">
+									<label for="inputName">Name</label>
+									<input type="text" class="form-control" id="inputName" required autofocus placeholder="Name">
+								</div>
+								<div class="form-group col-lg-6 col-md-12">
+									<label for="inputDatepicker">Dates</label>
+									<div class="input-daterange input-group" id="inputDatepicker">
+										<input type="text" class="input-sm form-control" name="start" required placeholder="Start Date" />
+										<input type="text" class="input-sm form-control" name="end" required placeholder="End Date" />
+									</div>
+								</div>
+								<div class="form-group col-lg-6 col-md-12">
+									<label for="inputReference">Reference</label>
+									<input type="text" class="form-control" id="inputReference" placeholder="Reference">
+								</div>
+								<div class="form-group col-lg-6 col-md-12">
+									<label for="inputNotes">Notes</label>
+									<input type="text" class="form-control" id="inputNotes" placeholder="Notes">
+								</div>
+								<div class="form-group col-lg-6 col-md-12">
+									<label for="InputUrl">URL</label>
+									<input type="text" class="form-control" id="InputUrl" placeholder="URL">
+								</div>
+							</div>
+							<a href="#" class="btn btn-secondary" data-dismiss="modal">Close</a>
+							<button type="submit" class="btn btn-success float-right">Create</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
 		<!-- button for new data -->
 		<div class="row">
 			<div class="col">
@@ -64,6 +107,7 @@
 				<hr>
 			</div>
 		</div>
+
 
 
 
@@ -126,8 +170,8 @@
 						<tr>
 							<th scope="row" colspan="2">
 								<div class="progress" style="height: 24px;">
-									<div class="progress-bar-striped progress-bar-animated progress-bar bg-success" role="progressbar" style="height: 24px; width: 40%" aria-valuenow="40" aria-valuemin="0"
-									 aria-valuemax="100"></div>
+									<div class="progress-bar-striped progress-bar-animated progress-bar bg-success" role="progressbar" style="height: 24px; width: 40%"
+									 aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
 								</div>
 							</th>
 						</tr>
@@ -172,8 +216,8 @@
 						<tr>
 							<th scope="row" colspan="2">
 								<div class="progress" style="height: 24px;">
-									<div class="progress-bar-striped progress-bar-animated progress-bar bg-warning" role="progressbar" style="height: 24px; width: 65%" aria-valuenow="65" aria-valuemin="0"
-									 aria-valuemax="100"></div>
+									<div class="progress-bar-striped progress-bar-animated progress-bar bg-warning" role="progressbar" style="height: 24px; width: 65%"
+									 aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
 								</div>
 							</th>
 						</tr>
@@ -218,8 +262,8 @@
 						<tr>
 							<th scope="row" colspan="2">
 								<div class="progress" style="height: 24px;">
-									<div class="progress-bar-striped progress-bar-animated progress-bar bg-danger" role="progressbar" style="height: 24px; width: 90%" aria-valuenow="90" aria-valuemin="0"
-									 aria-valuemax="100"></div>
+									<div class="progress-bar-striped progress-bar-animated progress-bar bg-danger" role="progressbar" style="height: 24px; width: 90%"
+									 aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
 								</div>
 							</th>
 						</tr>
@@ -257,6 +301,12 @@
 	<script src="vendor/popper-1.12.9/popper.min.js"></script>
 	<script src="vendor/bootstrap-4.0.0/js/bootstrap.min.js"></script>
 	<script src="vendor/shards-2.0.1/js/shards.min.js"></script>
+
+
+	<script>
+		$('#inputDatepicker').datepicker();
+	</script>
+
 </body>
 
 </html>

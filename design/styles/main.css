@@ -10,3 +10,7 @@ html, body {
 .mt-7 {
 	margin-top: 85px;
 }
+
+.datepicker{
+	z-index: 1200 !important;
+}
