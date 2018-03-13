@@ -32,10 +32,10 @@ Gestión de tareas: [Kanban](https://trello.com/b/x0Vl2LAY/until-now)
 - [x] Realizar mockups de las vistas
 - [x] Hacer mapa de la relación de collecciones de la base de datos
 - [x] Definir la estructura del proyecto
-- [ ] Web Templating
+- [x] Web Templating
 #### Martes
-- [ ] Solicitar feedback templating
-- [ ] Crear las vistas en React
+- [x] Solicitar feedback templating
+- [x] Crear las vistas en React
 - [ ] Crear base de datos
 - [ ] Crear API server
 - [ ] API server: listar colecciones e items
