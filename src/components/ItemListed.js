@@ -1,6 +1,16 @@
 import React from 'react';
+import  formatDate  from '../utils/util-functions';
+
+import ProgressBar from './ProgressBar';
+
 
 function ItemListed(props) {
+
+	// let url = '';
+	// if(props.url !== ''){
+	// 	url = `<a href="${props.url}">${props.url}</a>`;
+	// }
+
 	return (
 		<div className="col-md-6 col-sm-12 mb-5">
 			<table className="table table-bordered">
@@ -12,11 +22,11 @@ function ItemListed(props) {
 				<tbody>
 					<tr>
 						<th scope="row">Date Start</th>
-						<td>{props.dateStart}</td>
+						<td>{formatDate(props.dateStart)}</td>
 					</tr>
 					<tr>
 						<th scope="row">Date End</th>
-						<td>{props.dateEnd}</td>
+						<td>{formatDate(props.dateEnd)}</td>
 					</tr>
 					<tr>
 						<th scope="row">Reference</th>
@@ -26,18 +36,14 @@ function ItemListed(props) {
 						<th scope="row">Notes</th>
 						<td>{props.notes}</td>
 					</tr>
+					
 					<tr>
 						<th scope="row">URL</th>
-						<td>{props.url}</td>
+						<td>{`<a href="${props.url}">${props.url}</a>`}
+						</td>
 					</tr>
-					<tr>
-						<th scope="row" colSpan="2">
-							<div className="progress" style={{ height: '24px' }}>
-								<div className="progress-bar-striped progress-bar-animated progress-bar bg-success" role="progressbar" style={{ width: '40%', height: '24px' }}
-									aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
-							</div>
-						</th>
-					</tr>
+					
+					<ProgressBar />
 					<tr>
 						<th scope="row" colSpan="2">
 							<button type="button" className="btn btn-danger btn-sm mr-2" data-toggle="modal" data-target="#exampleModal">Delete Item</button>

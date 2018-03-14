@@ -15,7 +15,7 @@ function CollectionListed(props) {
 					</div>
 					<br />
 					<button type="button" className="btn btn-danger btn-sm mr-2" data-toggle="modal" data-target="#exampleModal">Delete collection</button>
-					<a href="items.html" className="btn btn-primary btn-sm">View Items</a>
+					<a href="items" className="btn btn-primary btn-sm">View Items</a>
 				</div>
 			</div>
 		</div>
