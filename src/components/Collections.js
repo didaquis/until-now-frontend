@@ -26,7 +26,7 @@ class Collections extends React.Component{
 	refreshList = (results) => {
 		if(results.status === 'OK'){
 			this.setState({list:results.data});
-		}
+		};
 	}
 
 	render() {

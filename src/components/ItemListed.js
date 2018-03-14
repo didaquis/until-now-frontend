@@ -1,6 +1,24 @@
 import React from 'react';
 
 function ItemListed(props) {
+
+	function formatDate(date) {
+		var d = new Date(date),
+			month = '' + (d.getMonth() + 1),
+			day = '' + d.getDate(),
+			year = d.getFullYear();
+	
+		if (month.length < 2) month = '0' + month;
+		if (day.length < 2) day = '0' + day;
+	
+		return [year, month, day].join('-');
+	}
+
+	// let url = '';
+	// if(props.url !== ''){
+	// 	url = `<a href="${props.url}">${props.url}</a>`;
+	// }
+
 	return (
 		<div className="col-md-6 col-sm-12 mb-5">
 			<table className="table table-bordered">
@@ -12,11 +30,11 @@ function ItemListed(props) {
 				<tbody>
 					<tr>
 						<th scope="row">Date Start</th>
-						<td>{props.dateStart}</td>
+						<td>{formatDate(props.dateStart)}</td>
 					</tr>
 					<tr>
 						<th scope="row">Date End</th>
-						<td>{props.dateEnd}</td>
+						<td>{formatDate(props.dateEnd)}</td>
 					</tr>
 					<tr>
 						<th scope="row">Reference</th>
@@ -26,10 +44,13 @@ function ItemListed(props) {
 						<th scope="row">Notes</th>
 						<td>{props.notes}</td>
 					</tr>
+					
 					<tr>
 						<th scope="row">URL</th>
-						<td>{props.url}</td>
+						<td>{`<a href="${props.url}">${props.url}</a>`}
+						</td>
 					</tr>
+					
 					<tr>
 						<th scope="row" colSpan="2">
 							<div className="progress" style={{ height: '24px' }}>
