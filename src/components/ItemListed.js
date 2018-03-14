@@ -1,18 +1,10 @@
 import React from 'react';
+import  formatDate  from '../utils/util-functions';
+
+import ProgressBar from './ProgressBar';
+
 
 function ItemListed(props) {
-
-	function formatDate(date) {
-		var d = new Date(date),
-			month = '' + (d.getMonth() + 1),
-			day = '' + d.getDate(),
-			year = d.getFullYear();
-	
-		if (month.length < 2) month = '0' + month;
-		if (day.length < 2) day = '0' + day;
-	
-		return [year, month, day].join('-');
-	}
 
 	// let url = '';
 	// if(props.url !== ''){
@@ -51,14 +43,7 @@ function ItemListed(props) {
 						</td>
 					</tr>
 					
-					<tr>
-						<th scope="row" colSpan="2">
-							<div className="progress" style={{ height: '24px' }}>
-								<div className="progress-bar-striped progress-bar-animated progress-bar bg-success" role="progressbar" style={{ width: '40%', height: '24px' }}
-									aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
-							</div>
-						</th>
-					</tr>
+					<ProgressBar />
 					<tr>
 						<th scope="row" colSpan="2">
 							<button type="button" className="btn btn-danger btn-sm mr-2" data-toggle="modal" data-target="#exampleModal">Delete Item</button>
