@@ -9,16 +9,19 @@ import NoData from './NoData';
 
 import untilNowApi from '../utils/until-now-api-client';
 
+
 class Items extends React.Component {
 	constructor(){
 		super();
 		this.state = {
-			list: []
+			list: [],
+			showPanelForNewData: false,
+			showButtonNewElement: true
 		};
 	}
 
 	componentWillMount(){
-		untilNowApi.listItems()
+		untilNowApi.listItemsInCollection(this.props.match.params.idOfCollection)
 			.then( res => this.refreshList(res) )
 			.catch(error => console.error(error));
 	}
@@ -29,15 +32,34 @@ class Items extends React.Component {
 		};
 	}
 
+	handlerOnClickButtonForNewData = () => {
+		this.setState({
+			showPanelForNewData: true,
+			showButtonNewElement: false
+		})
+	}
+
+	handlerClosePanelForNewData = () => {
+		this.setState({
+			showPanelForNewData: false,
+			showButtonNewElement: true
+		})
+	}
+
 	render() {
+
+		let noDataToShow;
+		if(this.state.list.length === 0){
+			noDataToShow = <NoData />;
+		}
+
 		return (
 			<section>
 				<Header title={'Items'} />
-				<PanelNewItem />
-				<ButtonNewElement text={'New item'} />
+				<PanelNewItem show={this.state.showPanelForNewData} onClick={this.handlerClosePanelForNewData} />
+				<ButtonNewElement show={this.state.showButtonNewElement} text={'New item'} onClick={this.handlerOnClickButtonForNewData} />
 				<HrElement />
 				<div className="row">
-
 					{
 						this.state.list.map( (item) =>{
 							return (
@@ -54,8 +76,8 @@ class Items extends React.Component {
 						} )
 					}
 				</div>
-				<NoData />
-				<ModalDelete textForBody={'Are you sure you want to delete this collection? All the items included in the collection will be deleted!'}/>
+				{noDataToShow}
+				<ModalDelete textForBody={'Are you sure you want to delete this item?'}/>
 			</section>
 		)
 	}

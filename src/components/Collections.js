@@ -13,7 +13,9 @@ class Collections extends React.Component{
 	constructor(){
 		super();
 		this.state = {
-			list: []
+			list: [],
+			showPanelForNewData: false,
+			showButtonNewElement: true
 		};
 	}
 
@@ -25,28 +27,48 @@ class Collections extends React.Component{
 
 	refreshList = (results) => {
 		if(results.status === 'OK'){
-			this.setState({list:results.data});
-		};
+			this.setState({list:results.data})
+		}
+	}
+
+	handlerOnClickButtonForNewData = () => {
+		this.setState({
+			showPanelForNewData: true,
+			showButtonNewElement: false
+		})
+	}
+
+	handlerClosePanelForNewData = () => {
+		this.setState({
+			showPanelForNewData: false,
+			showButtonNewElement: true
+		})
 	}
 
 	render() {
+
+		let noDataToShow;
+		if(this.state.list.length === 0){
+			noDataToShow = <NoData />;
+		}
+
 		return (
 			<section>
 				<Header title={'Collections'} />
-				<PanelNewCollection />
-				<ButtonNewElement text={'New collection'} />
+				<PanelNewCollection show={this.state.showPanelForNewData} onClick={this.handlerClosePanelForNewData} />
+				<ButtonNewElement show={this.state.showButtonNewElement} text={'New collection'} onClick={this.handlerOnClickButtonForNewData} />
 				<HrElement />
 				<div className="row">
 					{
 						this.state.list.map( (collection) =>{
 							return (
-								<CollectionListed key={collection._id} title={collection.name} count={'7'} />
+								<CollectionListed key={collection._id} id={collection._id} title={collection.name} count={'7'} />
 							)
 						} )
 					}
 				</div>
-				<NoData />
-				<ModalDelete textForBody={'Are you sure you want to delete this item?'}/>
+				{noDataToShow}
+				<ModalDelete textForBody={'Are you sure you want to delete this collection? All the items included in the collection will be deleted!'}/>
 			</section>
 		)
 	}

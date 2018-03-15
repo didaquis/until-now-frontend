@@ -1,13 +1,17 @@
 import React from 'react';
 
 function ButtonNewElement(props) {
-	return (
-		<div className="row">
-			<div className="col">
-				<button type="button" className="btn btn-success">{props.text}</button>
+	if(props.show){
+		return (
+			<div className="row">
+				<div className="col">
+					<button type="button" onClick={ (e) => { e.preventDefault(); props.onClick() } } className="btn btn-success">{props.text}</button>
+				</div>
 			</div>
-		</div>
-	)
+		)
+	}else{
+		return null
+	}
 }
 
 export default ButtonNewElement;
