@@ -14,7 +14,7 @@ function Nav(props){
 				<div className="collapse navbar-collapse" id="navbarCollapse">
 					<ul className="navbar-nav mr-auto">
 						<li className="nav-item">
-							<NavLink exact to='/collections' activeClassName='active' className="nav-link">Collections</NavLink>
+							<NavLink exact to='/collections' activeClassName='active' className="nav-link" replace>Collections</NavLink>
 						</li>
 					</ul>
 					{/* <form className="form-inline mt-2 mt-md-0">
