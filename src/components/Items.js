@@ -39,6 +39,13 @@ class Items extends React.Component {
 		})
 	}
 
+	handlerClosePanelForNewData = () => {
+		this.setState({
+			showPanelForNewData: false,
+			showButtonNewElement: true
+		})
+	}
+
 	render() {
 
 		let noDataToShow;
@@ -49,7 +56,7 @@ class Items extends React.Component {
 		return (
 			<section>
 				<Header title={'Items'} />
-				<PanelNewItem show={this.state.showPanelForNewData} />
+				<PanelNewItem show={this.state.showPanelForNewData} onClick={this.handlerClosePanelForNewData} />
 				<ButtonNewElement show={this.state.showButtonNewElement} text={'New item'} onClick={this.handlerOnClickButtonForNewData} />
 				<HrElement />
 				<div className="row">

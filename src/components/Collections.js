@@ -27,14 +27,21 @@ class Collections extends React.Component{
 
 	refreshList = (results) => {
 		if(results.status === 'OK'){
-			this.setState({list:results.data});
-		};
+			this.setState({list:results.data})
+		}
 	}
 
 	handlerOnClickButtonForNewData = () => {
 		this.setState({
 			showPanelForNewData: true,
 			showButtonNewElement: false
+		})
+	}
+
+	handlerClosePanelForNewData = () => {
+		this.setState({
+			showPanelForNewData: false,
+			showButtonNewElement: true
 		})
 	}
 
@@ -48,7 +55,7 @@ class Collections extends React.Component{
 		return (
 			<section>
 				<Header title={'Collections'} />
-				<PanelNewCollection show={this.state.showPanelForNewData} />
+				<PanelNewCollection show={this.state.showPanelForNewData} onClick={this.handlerClosePanelForNewData} />
 				<ButtonNewElement show={this.state.showButtonNewElement} text={'New collection'} onClick={this.handlerOnClickButtonForNewData} />
 				<HrElement />
 				<div className="row">

@@ -4,9 +4,11 @@ class PanelNewCollection extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			show: false
+			
 		}
 	}
+
+
 
 	render() {
 		if (this.props.show) {
@@ -24,7 +26,7 @@ class PanelNewCollection extends React.Component {
 												required pattern="[A-Za-z0-9.\-_\*\/\|]{3,}" autoFocus />
 											<small id="nameCollectionHelp" className="form-text text-muted">At least 3 chars</small>
 										</div>
-										<a href="#" className="btn btn-secondary" data-dismiss="modal">Close</a>
+										<button onClick={ (e) => { e.preventDefault(); this.props.onClick() }} className="btn btn-secondary">Close</button>
 										<button type="submit" className="btn btn-success float-right">Create</button>
 									</form>
 								</div>

@@ -4,7 +4,7 @@ class PanelNewItem extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			show: false
+			
 		}
 	}
 
@@ -43,7 +43,7 @@ class PanelNewItem extends React.Component {
 												<input type="text" className="form-control" id="InputUrl" placeholder="URL" />
 											</div>
 										</div>
-										<a href="#" className="btn btn-secondary" data-dismiss="modal">Close</a>
+										<button onClick={ (e) => { e.preventDefault(); this.props.onClick() }} className="btn btn-secondary">Close</button>
 										<button type="submit" className="btn btn-success float-right">Create</button>
 									</form>
 								</div>
