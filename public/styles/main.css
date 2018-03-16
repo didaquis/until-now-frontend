@@ -1,0 +1,16 @@
+html, body {
+	background-image: url(../images/mooning.png);/* Background pattern from Subtle Patterns */
+	background-repeat: repeat;
+}
+
+.mb-8 {
+	margin-bottom: 115px;
+}
+
+.mt-7 {
+	margin-top: 85px;
+}
+
+.datepicker{
+	z-index: 1200 !important;
+}
