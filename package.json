@@ -1,6 +1,6 @@
 {
   "name": "until-now-frontend",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "private": true,
   "dependencies": {
     "react": "^16.2.0",
@@ -8,7 +8,7 @@
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.1",
     "reactstrap": "^5.0.0-beta.2",
-    "until-now-client-api": "file:../until-now-client-api"
+    "until-now-client-api": "0.0.2"
   },
   "scripts": {
     "start": "react-scripts start",

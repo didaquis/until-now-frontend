@@ -22,6 +22,8 @@ Enlaces relacionados:
 * [Until Now client API](https://github.com/didaquis/until-now-client-api) 
 * [Until Now server API](https://github.com/didaquis/until-now-server-api) 
 
+Para hacer funcionar la aplicación, debes renombrar el fichero `_env` por `.env` y configurar las variables para la correcta utilización de la API y/o el TDD. 
+
 
 ## Documentación del proyecto 
 Estructura de la base de datos:  
@@ -55,33 +57,38 @@ Gestión de tareas: [Kanban](https://trello.com/b/x0Vl2LAY/until-now)
 - [x] Crear API server
 - [x] API server: listar colecciones e items
 #### Miércoles
-- [ ] Crear API client
-- [ ] API client: listar colecciones e items
+- [x] Crear API client
+- [x] API client: listar colecciones e items
+- [x] TDD API client
 #### Jueves
-- [ ] TDD API server
-- [ ] TDD API client
-- [ ] Listar en frontend colecciones e items
+- [x] TDD API server
+- [x] Listar en frontend colecciones e items
+- [x] API server: eliminación de colecciones
+- [x] API client: eliminación de colecciones
 #### Viernes
-- [ ] Solicitar feedback
-- [ ] Testing
-- [ ] HotFixing
-- [ ] Deploy sprint
+- [x] Solicitar feedback
+- [x] Testing
+- [x] HotFixing
+- [x] Deploy sprint
 ------
 ### Sprint segunda semana
 #### Lunes
-- [ ] API server: sistema de login
-- [ ] API client: sistema de login
-- [ ] TDD sistema de login
+- [x] Implementar en frontend la eliminación de items y colecciones
+- [ ] Implementar funcionalidad cálculo de progreso de vida útil
+- [ ] Implementar recuento de items en la vista de colecciones
+- [ ] API server: creación de colecciones
+- [ ] API client: creación de colecciones
 #### Martes
-- [ ] Implementar sistema de login y logout en frontend
-#### Miércoles
-- [ ] API server: creación y eliminación de colecciones
-- [ ] API client: creación y eliminación de colecciones
 - [ ] TDD creación y eliminación de colecciones
+- [ ] Implementar en frontend la creación de colecciones
+- [ ] API server: creación items
+#### Miércoles
+- [ ] API client: creación items
+- [ ] TDD creación y eliminación de items
 #### Jueves
-- [ ] Implementar en frontend la creación y eliminación de colecciones
-#### Viernes
+- [ ] Implementar en frontend la creación de items
 - [ ] Solicitar feedback
+#### Viernes
 - [ ] Testing
 - [ ] HotFixing
 - [ ] Revisar la documentación del proyecto
@@ -89,17 +96,17 @@ Gestión de tareas: [Kanban](https://trello.com/b/x0Vl2LAY/until-now)
 ------
 ### Sprint tercera semana
 #### Lunes
-- [ ] API server: creación y eliminación de items
-- [ ] API client: creación y eliminación de items
-- [ ] TDD creación y eliminación de items
+- [ ] Implementar el datepicker en frontend
 #### Martes
-- [ ] Implementar en frontend la creación y eliminación de items
+- [ ] API server: sistema de login
+- [ ] API client: sistema de login
+- [ ] TDD sistema de login
 #### Miércoles
+- [ ] Implementar sistema de login y logout en frontend
 - [ ] Testing
 - [ ] HotFixing
-- [ ] TDD
-#### Jueves
 - [ ] Revisar la documentación del proyecto
+#### Jueves
 - [ ] Deploy sprint
 - [ ] Preparar la presentación del proyecto
 #### Viernes

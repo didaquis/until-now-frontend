@@ -2,7 +2,6 @@ import React from 'react';
 
 import { NavLink } from 'react-router-dom';
 
-
 function CollectionListed(props) {
 	return (
 		<div className="col-lg-4 col-md-6 col-sm-12 mb-5">
@@ -17,8 +16,8 @@ function CollectionListed(props) {
 						</small>
 					</div>
 					<br />
-					<button type="button" className="btn btn-danger btn-sm mr-2" data-toggle="modal" data-target="#exampleModal">Delete collection</button>
-					<NavLink exact to={`/collection/${props.id}`} className="btn btn-primary btn-sm">View Items</NavLink>
+					<button type="button" className="btn btn-outline-danger btn-sm mr-2" onClick={(e) => { e.preventDefault(); props.handlerOnClickButtonForOpenModal(props.id) }} >Delete collection</button>
+					<NavLink exact to={`/collection/${props.id}`} className="btn btn-outline-primary btn-sm">View Items</NavLink>
 					{/* <a href="/collection/" className="btn btn-primary btn-sm">View Items</a> */}
 				</div>
 			</div>

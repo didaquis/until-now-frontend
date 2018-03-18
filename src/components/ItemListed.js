@@ -5,12 +5,6 @@ import ProgressBar from './ProgressBar';
 
 
 function ItemListed(props) {
-
-	// let url = '';
-	// if(props.url !== ''){
-	// 	url = `<a href="${props.url}">${props.url}</a>`;
-	// }
-
 	return (
 		<div className="col-md-6 col-sm-12 mb-5">
 			<table className="table table-bordered">
@@ -37,16 +31,10 @@ function ItemListed(props) {
 						<td>{props.notes}</td>
 					</tr>
 					
-					<tr>
-						<th scope="row">URL</th>
-						<td>{`<a href="${props.url}">${props.url}</a>`}
-						</td>
-					</tr>
-					
 					<ProgressBar />
 					<tr>
 						<th scope="row" colSpan="2">
-							<button type="button" className="btn btn-danger btn-sm mr-2" data-toggle="modal" data-target="#exampleModal">Delete Item</button>
+							<button type="button" className="btn btn-outline-danger btn-sm mr-2" onClick={(e) => { e.preventDefault(); props.handlerOnClickButtonForOpenModal(props.id) }} >Delete Item</button>
 						</th>
 					</tr>
 				</tbody>
