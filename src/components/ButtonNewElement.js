@@ -5,7 +5,7 @@ function ButtonNewElement(props) {
 		return (
 			<div className="row">
 				<div className="col">
-					<button type="button" onClick={ (e) => { e.preventDefault(); props.onClick() } } className="btn btn-success">{props.text}</button>
+					<button type="button" onClick={ (e) => { e.preventDefault(); props.onClick() } } className="btn btn-success btn-sm">{props.text}</button>
 				</div>
 			</div>
 		)
