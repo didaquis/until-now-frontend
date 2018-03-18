@@ -35,14 +35,16 @@ class Collections extends React.Component{
 	handlerOnClickButtonForNewData = () => {
 		this.setState({
 			showPanelForNewData: true,
-			showButtonNewElement: false
+			showButtonNewElement: false,
+			dataForModalDelete: ''
 		})
 	}
 
 	handlerClosePanelForNewData = () => {
 		this.setState({
 			showPanelForNewData: false,
-			showButtonNewElement: true
+			showButtonNewElement: true,
+			dataForModalDelete: ''
 		})
 	}
 
