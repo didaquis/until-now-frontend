@@ -15,7 +15,8 @@ class Collections extends React.Component{
 		this.state = {
 			list: [],
 			showPanelForNewData: false,
-			showButtonNewElement: true
+			showButtonNewElement: true, 
+			dataForModalDelete: ''
 		};
 	}
 
@@ -45,8 +46,11 @@ class Collections extends React.Component{
 		})
 	}
 
-	render() {
+	handlerOnClickButtonForOpenModal = (id) => {
+		this.setState({ dataForModalDelete: id })
+	}
 
+	render() {
 		let noDataToShow;
 		if(this.state.list.length === 0){
 			noDataToShow = <NoData />;
@@ -62,13 +66,13 @@ class Collections extends React.Component{
 					{
 						this.state.list.map( (collection) =>{
 							return (
-								<CollectionListed key={collection._id} id={collection._id} title={collection.name} count={'7'} />
+								<CollectionListed key={collection._id} id={collection._id} title={collection.name} count={'7'} handlerOnClickButtonForOpenModal={this.handlerOnClickButtonForOpenModal} />
 							)
 						} )
 					}
 				</div>
 				{noDataToShow}
-				<ModalDelete textForBody={'Are you sure you want to delete this collection? All the items included in the collection will be deleted!'}/>
+				<ModalDelete textForBody={'Are you sure you want to delete this collection? All the items included in the collection will be deleted!'} dataForModalDelete={this.state.dataForModalDelete} target={'collection'} />
 			</section>
 		)
 	}

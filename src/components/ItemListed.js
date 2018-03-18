@@ -34,7 +34,7 @@ function ItemListed(props) {
 					<ProgressBar />
 					<tr>
 						<th scope="row" colSpan="2">
-							<button type="button" className="btn btn-danger btn-sm mr-2" data-toggle="modal" data-target="#exampleModal">Delete Item</button>
+							<button type="button" className="btn btn-danger btn-sm mr-2" onClick={(e) => { e.preventDefault(); props.handlerOnClickButtonForOpenModal(props.id) }} >Delete Item</button>
 						</th>
 					</tr>
 				</tbody>
