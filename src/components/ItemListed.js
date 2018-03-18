@@ -5,12 +5,6 @@ import ProgressBar from './ProgressBar';
 
 
 function ItemListed(props) {
-
-	// let url = '';
-	// if(props.url !== ''){
-	// 	url = `<a href="${props.url}">${props.url}</a>`;
-	// }
-
 	return (
 		<div className="col-md-6 col-sm-12 mb-5">
 			<table className="table table-bordered">
@@ -35,12 +29,6 @@ function ItemListed(props) {
 					<tr>
 						<th scope="row">Notes</th>
 						<td>{props.notes}</td>
-					</tr>
-					
-					<tr>
-						<th scope="row">URL</th>
-						<td>{`<a href="${props.url}">${props.url}</a>`}
-						</td>
 					</tr>
 					
 					<ProgressBar />
