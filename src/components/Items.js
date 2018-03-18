@@ -16,7 +16,8 @@ class Items extends React.Component {
 		this.state = {
 			list: [],
 			showPanelForNewData: false,
-			showButtonNewElement: true
+			showButtonNewElement: true,
+			dataForModalDelete: ''
 		};
 	}
 
@@ -46,6 +47,10 @@ class Items extends React.Component {
 		})
 	}
 
+	handlerOnClickButtonForOpenModal = (id) => {
+		this.setState({ dataForModalDelete: id })
+	}
+
 	render() {
 
 		let noDataToShow;
@@ -66,6 +71,7 @@ class Items extends React.Component {
 								<ItemListed 
 									dateEnd={item.dateEnd} 
 									dateStart={item.dateStart} 
+									handlerOnClickButtonForOpenModal={this.handlerOnClickButtonForOpenModal} id={item._id}
 									key={item._id} 
 									notes={item.notes} 
 									reference={item.refNumber} 
@@ -77,7 +83,7 @@ class Items extends React.Component {
 					}
 				</div>
 				{noDataToShow}
-				<ModalDelete textForBody={'Are you sure you want to delete this item?'}/>
+				<ModalDelete textForBody={'Are you sure you want to delete this item?'} dataForModalDelete={this.state.dataForModalDelete} target={'item'} />
 			</section>
 		)
 	}
