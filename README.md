@@ -22,6 +22,8 @@ Enlaces relacionados:
 * [Until Now client API](https://github.com/didaquis/until-now-client-api) 
 * [Until Now server API](https://github.com/didaquis/until-now-server-api) 
 
+Para hacer funcionar la aplicación, debes renombrar el fichero `_env` por `.env` y configurar las variables para la correcta utilización de la API y/o el TDD. 
+
 
 ## Documentación del proyecto 
 Estructura de la base de datos:  
