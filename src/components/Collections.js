@@ -68,7 +68,7 @@ class Collections extends React.Component{
 					{
 						this.state.list.map( (collection) =>{
 							return (
-								<CollectionListed key={collection._id} id={collection._id} title={collection.name} count={'7'} handlerOnClickButtonForOpenModal={this.handlerOnClickButtonForOpenModal} />
+								<CollectionListed key={collection._id} id={collection._id} title={collection.name} count={collection.itemsCount} handlerOnClickButtonForOpenModal={this.handlerOnClickButtonForOpenModal} />
 							)
 						} )
 					}

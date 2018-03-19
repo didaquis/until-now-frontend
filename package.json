@@ -1,6 +1,6 @@
 {
   "name": "until-now-frontend",
-  "version": "0.0.3",
+  "version": "0.0.6",
   "private": true,
   "dependencies": {
     "react": "^16.2.0",
@@ -8,12 +8,13 @@
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.1",
     "reactstrap": "^5.0.0-beta.2",
-    "until-now-client-api": "0.0.2"
+    "until-now-client-api": "^0.0.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "update_dependencies": "npm update --save"
   }
 }

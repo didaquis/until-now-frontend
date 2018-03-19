@@ -74,14 +74,14 @@ Gestión de tareas: [Kanban](https://trello.com/b/x0Vl2LAY/until-now)
 ### Sprint segunda semana
 #### Lunes
 - [x] Implementar en frontend la eliminación de items y colecciones
-- [ ] Implementar funcionalidad cálculo de progreso de vida útil
-- [ ] Implementar recuento de items en la vista de colecciones
-- [ ] API server: creación de colecciones
-- [ ] API client: creación de colecciones
+- [x] Implementar funcionalidad cálculo de progreso de vida útil
+- [x] Implementar recuento de items en la vista de colecciones
+- [x] API server: creación de colecciones
+- [x] API client: creación de colecciones
 #### Martes
-- [ ] TDD creación y eliminación de colecciones
-- [ ] Implementar en frontend la creación de colecciones
-- [ ] API server: creación items
+- [x] TDD creación y eliminación de colecciones
+- [x] Implementar en frontend la creación de colecciones
+- [x] API server: creación items
 #### Miércoles
 - [ ] API client: creación items
 - [ ] TDD creación y eliminación de items
