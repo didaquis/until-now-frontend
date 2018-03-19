@@ -1,10 +1,14 @@
 import React from 'react';
-import  formatDate  from '../utils/util-functions';
+import { formatDate, calculateNumberForProgress, calculateColorOfProgressBar, today } from '../utils/util-functions';
 
 import ProgressBar from './ProgressBar';
 
 
 function ItemListed(props) {
+	
+	const progressNumber = calculateNumberForProgress(formatDate(props.dateStart), today(), formatDate(props.dateEnd));
+	const colorOfProgressBar = calculateColorOfProgressBar(progressNumber);
+
 	return (
 		<div className="col-md-6 col-sm-12 mb-5">
 			<table className="table table-bordered">
@@ -31,7 +35,7 @@ function ItemListed(props) {
 						<td>{props.notes}</td>
 					</tr>
 					
-					<ProgressBar />
+					<ProgressBar colorOfProgressBar={colorOfProgressBar} progressNumber={progressNumber} />
 					<tr>
 						<th scope="row" colSpan="2">
 							<button type="button" className="btn btn-outline-danger btn-sm mr-2" onClick={(e) => { e.preventDefault(); props.handlerOnClickButtonForOpenModal(props.id) }} >Delete Item</button>
