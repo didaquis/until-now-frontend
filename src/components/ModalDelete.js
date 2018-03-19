@@ -21,7 +21,6 @@ class ModalDelete extends React.Component {
 		});
 	}
 
-
 	componentWillReceiveProps(nextProps){
 		if(nextProps.dataForModalDelete !== ''){
 			this.setState({ dataForModalDelete: nextProps.dataForModalDelete, target:nextProps.target });
@@ -30,9 +29,7 @@ class ModalDelete extends React.Component {
 	}
 
 	handlerSubmit = () => {
-		console.log('submit: ')
 		if(this.state.target === 'collection'){
-			console.log('submit delete collection: ')
 			untilNowApi.deleteCollection(this.state.dataForModalDelete)
 				.then(res => {
 					if(res.status === 'OK'){
@@ -44,7 +41,6 @@ class ModalDelete extends React.Component {
 				.catch(err => console.error(err))
 		}
 		if(this.state.target === 'item'){
-			console.log('submit delete item: ' + this.state.dataForModalDelete)
 			untilNowApi.deleteItem(this.state.dataForModalDelete)
 				.then(res => {
 					if(res.status === 'OK'){
