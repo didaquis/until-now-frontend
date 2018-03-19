@@ -1,10 +1,14 @@
 import React from 'react';
-import  formatDate  from '../utils/util-functions';
+import { formatDate, calculateProgress, calculateColorOfProgressBar, today } from '../utils/util-functions';
 
 import ProgressBar from './ProgressBar';
 
 
 function ItemListed(props) {
+	
+	const progress = calculateProgress(formatDate(props.dateStart), today(), formatDate(props.dateEnd));
+	const colorOfProgressBar = calculateColorOfProgressBar(progress);
+
 	return (
 		<div className="col-md-6 col-sm-12 mb-5">
 			<table className="table table-bordered">
