@@ -29,11 +29,20 @@ Date.daysBetween = function (startDate, endDate) {
 	return Math.round(difference_ms / one_day);
 }
 
-function calculateProgress(startDate, today, endDate) {
+function calculateNumberForProgress(startDate, today, endDate) {
 	const daysFromStartToEndDate = Date.daysBetween(startDate, endDate);
 	const daysFromStartDateToToday = Date.daysBetween(startDate, today);
-	const result = (daysFromStartDateToToday * 100) / daysFromStartToEndDate;
-	return Math.round(result);
+	let result = (daysFromStartDateToToday * 100) / daysFromStartToEndDate;
+	result = Math.round(result);
+	// In tihs point, value of 'result' is equal to & of days passed between start date and today
+
+	if(result <= 0){
+		return 1; // just for beautiful effect on UI
+	}else if(result > 100){
+		return 100;
+	}else {
+		return result;
+	}
 }
 
 function calculateColorOfProgressBar(int){
@@ -46,4 +55,4 @@ function calculateColorOfProgressBar(int){
 	}
 }
 
-module.exports = { formatDate, today, calculateProgress, calculateColorOfProgressBar };
+module.exports = { formatDate, today, calculateNumberForProgress, calculateColorOfProgressBar };
