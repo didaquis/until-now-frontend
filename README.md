@@ -75,7 +75,7 @@ Gestión de tareas: [Kanban](https://trello.com/b/x0Vl2LAY/until-now)
 #### Lunes
 - [x] Implementar en frontend la eliminación de items y colecciones
 - [x] Implementar funcionalidad cálculo de progreso de vida útil
-- [ ] Implementar recuento de items en la vista de colecciones
+- [x] Implementar recuento de items en la vista de colecciones
 - [x] API server: creación de colecciones
 - [x] API client: creación de colecciones
 #### Martes
