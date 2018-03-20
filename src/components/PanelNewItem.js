@@ -71,7 +71,7 @@ class PanelNewItem extends React.Component {
 						<div className="col-md-8 offset-md-2">
 							<div className="card">
 								<div className="card-body">
-									<h4 className="card-title">Add new Items</h4>
+									<h4 className="card-title">Add new equipment</h4>
 									<form onSubmit={(e) => { e.preventDefault(); this.handlerSubmit() }}>
 										<div className="form-row">
 											<div className="form-group col-md-12">
