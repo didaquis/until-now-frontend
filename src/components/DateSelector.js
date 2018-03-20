@@ -25,9 +25,6 @@ class DateSelector extends React.Component {
 		return (
 			<Calendar className="mb-2 mt-1" id={this.props.idValue} 
 				dateFormat={dt => String(dt.getDate())} 
-				// dayFormat={day => ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'][day.getDay()]} 
-				// max={new Date()} 
-				// min={new Date()} 
 				max={this.props.max} 
 				min={this.props.min} 
 				value={this.state.value}
