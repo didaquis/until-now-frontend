@@ -34,22 +34,23 @@ class PanelNewItem extends React.Component {
 	}
 
 	handlerSubmit = () =>{
-
 		if( this.state.inputStart !== '' 
 			&& this.state.inputEnd !== '' 
 			&& (new Date(this.state.inputStart) < new Date(this.state.inputEnd) ) 
 		){
+			// Dates pass the validations...
 			untilNowApi.createItem(this.state.inputName, this.state.inputStart, this.state.inputEnd, this.state.inputReference, this.state.inputNotes, this.state.idOfCollection )
 				.then(res => {
 					if(res.status === 'OK'){
 						window.location.reload();
 					}else{
-						console.log(res)
+						console.log(res);
 					}
 				})
 				.catch(err => console.error(err));
 		}else{
-			console.error('Check calendar values!')
+			// Dates don't pass the validations...
+			console.log('Check calendar values! Select date are required');
 		}
 	}
 
@@ -74,16 +75,28 @@ class PanelNewItem extends React.Component {
 									<form onSubmit={(e) => { e.preventDefault(); this.handlerSubmit() }}>
 										<div className="form-row">
 											<div className="form-group col-md-12">
-												<label htmlFor="inputName">Name</label>
+												<label htmlFor="inputName">Name <span className="text-danger">*</span></label>
 												<input type="text" className="form-control" id="inputName" required autoFocus placeholder="Name" onChange={e => this.fillInput(e.target)} value={this.state.inputName} />
 											</div>
 											<div className="form-group col-lg-6 col-md-12">
-												<label htmlFor="startDate">Start Date</label>
-												<DateSelector calendarIdentifier={'dateStart'} onChange={this.handlerOnChangeCalendar} idValue={'startDate'} min={new Date('2010, 01, 01')} max={new Date()} />
+												<label htmlFor="startDate">Start Date <span className="text-danger">*</span></label>
+												<DateSelector 
+													calendarIdentifier={'dateStart'} 
+													onChange={this.handlerOnChangeCalendar} 
+													idValue={'startDate'} 
+													min={new Date('2010, 01, 01')} 
+													max={new Date()} 
+												/>
 											</div>
 											<div className="form-group col-lg-6 col-md-12">
-												<label htmlFor="endDate">End Date</label>
-												<DateSelector calendarIdentifier={'dateEnd'} onChange={this.handlerOnChangeCalendar} idValue={'endDate'} min={new Date(+new Date() + 86400000)} max={new Date('2085, 01, 01')}/>
+												<label htmlFor="endDate">End Date <span className="text-danger">*</span></label>
+												<DateSelector 
+													calendarIdentifier={'dateEnd'} 
+													onChange={this.handlerOnChangeCalendar} 
+													idValue={'endDate'} 
+													min={new Date(+new Date() + 86400000)} 
+													max={new Date('2085, 01, 01')} 
+												/>
 											</div>
 											<div className="form-group col-lg-6 col-md-12">
 												<label htmlFor="inputReference">Reference</label>

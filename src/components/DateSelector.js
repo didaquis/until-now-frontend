@@ -24,13 +24,13 @@ class DateSelector extends React.Component {
 	render() {
 		return (
 			<Calendar className="mb-2 mt-1" id={this.props.idValue} 
-				dateFormat={dt => String(dt.getDate())} 
+				//dateFormat={dt => String(dt.getDate())} 
 				max={this.props.max} 
 				min={this.props.min} 
 				value={this.state.value}
 				onChange={value => this.handlerOnChange(value)}
-				views={['month','year', 'decade']} 
-				footer={false} 
+				views={['year', 'decade']} 
+				footer={false}  
   			/>
 		)
 	}
