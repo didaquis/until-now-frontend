@@ -83,9 +83,10 @@ Gestión de tareas: [Kanban](https://trello.com/b/x0Vl2LAY/until-now)
 - [x] Implementar en frontend la creación de colecciones
 - [x] API server: creación items
 #### Miércoles
-- [ ] API client: creación items
-- [ ] TDD creación y eliminación de items
+- [x] API client: creación items
+- [x] TDD creación y eliminación de items
 #### Jueves
+- [ ] Bug fixings
 - [ ] Implementar en frontend la creación de items
 - [ ] Solicitar feedback
 #### Viernes
@@ -111,4 +112,10 @@ Gestión de tareas: [Kanban](https://trello.com/b/x0Vl2LAY/until-now)
 - [ ] Preparar la presentación del proyecto
 #### Viernes
 - [ ] Presentación del proyecto
-------
+------  
+
+## Futuro del proyecto  
+Este proyecto ha sido realizado en 15 días, por lo que se han quedado fuera muchas ideas interesantes. Estas son algunas de ellas: 
+* Envío de alertas por email al finalizar la vida útil de los productos 
+* Posibilidad de mostrar avisos o envío de alertas cuando el fabricante de un producto lanza una campaña de "recall" de material del cual eres poseedor 
+* Al introducir material, la aplicación te sugiere la durabilidad máxima basada en los datos proporcionados por el fabricante 
