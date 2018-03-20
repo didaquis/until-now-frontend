@@ -7,8 +7,8 @@ function Home(props) {
 	return (
 		<section>
 			<MainHeader />
-			<Features reverse={true} />
-			<Features reverse={false} />
+			<Features reverse={true} img={require('../images/features_1.png')} />
+			<Features reverse={false} img={require('../images/features_2.png')} />
 		</section>
 	)
 }
