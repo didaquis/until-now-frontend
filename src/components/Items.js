@@ -62,9 +62,9 @@ class Items extends React.Component {
 
 		return (
 			<section>
-				<Header title={'Items'} />
+				<Header title={'Equipment'} subtitle={'View and manage all your technical gear of this collection'} />
 				<PanelNewItem show={this.state.showPanelForNewData} onClick={this.handlerClosePanelForNewData} idOfCollection={this.props.match.params.idOfCollection} />
-				<ButtonNewElement show={this.state.showButtonNewElement} text={'New item'} onClick={this.handlerOnClickButtonForNewData} />
+				<ButtonNewElement show={this.state.showButtonNewElement} text={'New equipment'} onClick={this.handlerOnClickButtonForNewData} />
 				<HrElement />
 				<div className="row">
 					{
@@ -85,7 +85,7 @@ class Items extends React.Component {
 					}
 				</div>
 				{noDataToShow}
-				<ModalDelete textForBody={'Are you sure you want to delete this item?'} dataForModalDelete={this.state.dataForModalDelete} target={'item'} />
+				<ModalDelete textForBody={'Are you sure you want to delete this equipment?'} dataForModalDelete={this.state.dataForModalDelete} target={'item'} />
 			</section>
 		)
 	}

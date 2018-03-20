@@ -6,6 +6,7 @@ function Header(props) {
 		<div className="row">
 			<div className="col">
 				<h2 className="text-center mb-4">{props.title}</h2>
+				<p className="text-center lead">{props.subtitle}</p>
 			</div>
 		</div>
 	)

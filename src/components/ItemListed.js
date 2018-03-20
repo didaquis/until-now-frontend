@@ -37,7 +37,7 @@ function ItemListed(props) {
 					<ProgressBar colorOfProgressBar={colorOfProgressBar} progressNumber={progressNumber} />
 					<tr>
 						<th scope="row" colSpan="2">
-							<button type="button" className="btn btn-outline-danger btn-sm mr-2" onClick={(e) => { e.preventDefault(); props.handlerOnClickButtonForOpenModal(props.id) }} >Delete Item</button>
+							<button type="button" className="btn btn-outline-danger btn-sm mr-2" onClick={(e) => { e.preventDefault(); props.handlerOnClickButtonForOpenModal(props.id) }} >Delete equipment</button>
 						</th>
 					</tr>
 				</tbody>

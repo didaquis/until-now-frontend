@@ -17,7 +17,7 @@ function CollectionListed(props) {
 					</div>
 					<br />
 					<button type="button" className="btn btn-outline-danger btn-sm mr-2" onClick={(e) => { e.preventDefault(); props.handlerOnClickButtonForOpenModal(props.id) }} >Delete collection</button>
-					<NavLink exact to={`/collection/${props.id}`} className="btn btn-outline-primary btn-sm">View Items</NavLink>
+					<NavLink exact to={`/collection/${props.id}`} className="btn btn-outline-primary btn-sm">View equipment</NavLink>
 					{/* <a href="/collection/" className="btn btn-primary btn-sm">View Items</a> */}
 				</div>
 			</div>

@@ -64,7 +64,7 @@ class Collections extends React.Component{
 
 		return (
 			<section>
-				<Header title={'Collections'} />
+				<Header title={'Collections'} subtitle={'View and manage all your equipment collection'} />
 				<PanelNewCollection show={this.state.showPanelForNewData} onClick={this.handlerClosePanelForNewData} />
 				<ButtonNewElement show={this.state.showButtonNewElement} text={'New collection'} onClick={this.handlerOnClickButtonForNewData} />
 				<HrElement />
