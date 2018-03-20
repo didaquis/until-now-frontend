@@ -27,14 +27,19 @@ Date.daysBetween = function (startDate, endDate) {
 
 	// Convert back to days and return
 	return Math.round(difference_ms / one_day);
-}
+};
 
 function calculateNumberForProgress(startDate, today, endDate) {
 	const daysFromStartToEndDate = Date.daysBetween(startDate, endDate);
-	const daysFromStartDateToToday = Date.daysBetween(startDate, today);
+	let daysFromStartDateToToday = Date.daysBetween(startDate, today);
+
+	if(daysFromStartDateToToday <= 0) {
+		// this is for avoid multiplier for zero!
+		daysFromStartDateToToday = 1;
+	}
 	let result = (daysFromStartDateToToday * 100) / daysFromStartToEndDate;
 	result = Math.round(result);
-	// In tihs point, value of 'result' is equal to & of days passed between start date and today
+	// In this point, value of 'result' is equal to & of days passed between start date and today
 
 	if(result <= 0){
 		return 1; // just for beautiful effect on UI

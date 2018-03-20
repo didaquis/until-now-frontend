@@ -20,6 +20,10 @@ class Collections extends React.Component{
 		};
 	}
 
+	componentWillReceiveProps (){
+		this.setState({dataForModalDelete: ''})
+	}
+
 	componentWillMount(){
 		untilNowApi.listCollections()
 			.then( res => this.refreshList(res) )

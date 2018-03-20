@@ -1,10 +1,6 @@
 import React from 'react';
 
 function ProgressBar(props) {
-
-// colorOfProgressBar
-// progressNumber
-
 	return (
 		<tr>
 			<th scope="row" colSpan="2">

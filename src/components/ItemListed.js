@@ -5,7 +5,6 @@ import ProgressBar from './ProgressBar';
 
 
 function ItemListed(props) {
-	
 	const progressNumber = calculateNumberForProgress(formatDate(props.dateStart), today(), formatDate(props.dateEnd));
 	const colorOfProgressBar = calculateColorOfProgressBar(progressNumber);
 
