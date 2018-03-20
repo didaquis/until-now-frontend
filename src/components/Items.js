@@ -63,7 +63,7 @@ class Items extends React.Component {
 		return (
 			<section>
 				<Header title={'Items'} />
-				<PanelNewItem show={this.state.showPanelForNewData} onClick={this.handlerClosePanelForNewData} />
+				<PanelNewItem show={this.state.showPanelForNewData} onClick={this.handlerClosePanelForNewData} idOfCollection={this.props.match.params.idOfCollection} />
 				<ButtonNewElement show={this.state.showButtonNewElement} text={'New item'} onClick={this.handlerOnClickButtonForNewData} />
 				<HrElement />
 				<div className="row">

@@ -1,6 +1,6 @@
 {
   "name": "until-now-frontend",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "private": true,
   "dependencies": {
     "react": "^16.2.0",
