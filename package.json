@@ -3,10 +3,14 @@
   "version": "0.0.9",
   "private": true,
   "dependencies": {
+    "moment": "^2.21.0",
     "react": "^16.2.0",
+    "react-dates": "^16.3.6",
     "react-dom": "^16.2.0",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.1",
+    "react-widgets": "^4.2.2",
+    "react-widgets-moment": "^4.0.9",
     "reactstrap": "^5.0.0-beta.3",
     "until-now-client-api": "^0.0.5"
   },

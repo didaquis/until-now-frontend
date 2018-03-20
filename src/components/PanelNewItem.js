@@ -1,5 +1,7 @@
 import React from 'react';
 
+import DateSelector from './DateSelector';
+
 import untilNowApi from '../utils/until-now-api-client';
 
 class PanelNewItem extends React.Component {
@@ -19,16 +21,9 @@ class PanelNewItem extends React.Component {
 		this.setState({idOfCollection: this.props.idOfCollection});
 	}
 
-
 	fillInput = (input) => {
 		if(input.id === 'inputName'){
 			this.setState({ inputName: input.value });
-		}
-		if(input.id === 'inputStart'){
-			this.setState({ inputStart: input.value });
-		}
-		if(input.id === 'inputEnd'){
-			this.setState({ inputEnd: input.value });
 		}
 		if(input.id === 'inputReference'){
 			this.setState({ inputReference: input.value });
@@ -50,6 +45,15 @@ class PanelNewItem extends React.Component {
 			.catch(err => console.error(err))
 	}
 
+	handlerOnChangeCalendar = (calendar, value) => {
+		if(calendar === 'dateStart'){
+			this.setState({ inputStart: value });
+		}
+		if(calendar === 'dateEnd'){
+			this.setState({ inputEnd: value });
+		}
+	}
+
 	render() {
 		if (this.props.show) {
 			return (
@@ -61,17 +65,34 @@ class PanelNewItem extends React.Component {
 									<h4 className="card-title">Add new Items</h4>
 									<form onSubmit={(e) => { e.preventDefault(); this.handlerSubmit() }}>
 										<div className="form-row">
-											<div className="form-group col-lg-6 col-md-12">
+											<div className="form-group col-md-12">
 												<label htmlFor="inputName">Name</label>
 												<input type="text" className="form-control" id="inputName" required autoFocus placeholder="Name" onChange={e => this.fillInput(e.target)} value={this.state.inputName} />
 											</div>
+
+											{/* <DateSelector calendarIdentifier={'dateStart'} onChange={this.handlerOnChangeCalendar} />
+											<DateSelector calendarIdentifier={'dateEnd'} onChange={this.handlerOnChangeCalendar} /> */}
+
 											<div className="form-group col-lg-6 col-md-12">
-												<label htmlFor="inputDatepicker">Dates</label>
-												<div className="input-daterange input-group" id="inputDatepicker">
-													<input type="text" className="input-sm form-control" name="inputStart" id="inputStart" required placeholder="Start Date" onChange={e => this.fillInput(e.target)} value={this.state.inputStart} />
-													<input type="text" className="input-sm form-control" name="inputEnd" id="inputEnd" required placeholder="End Date" onChange={e => this.fillInput(e.target)} value={this.state.inputEnd} />
-												</div>
+												<label htmlFor="startDate">Start Date</label>
+												<DateSelector calendarIdentifier={'dateStart'} onChange={this.handlerOnChangeCalendar} idValue={'startDate'} min={new Date('2010, 01, 01')} max={new Date()} />
 											</div>
+
+											<div className="form-group col-lg-6 col-md-12">
+												<label htmlFor="endDate">End Date</label>
+												<DateSelector calendarIdentifier={'dateEnd'} onChange={this.handlerOnChangeCalendar} idValue={'endDate'} min={new Date(+new Date() + 86400000)} max={new Date('2070, 01, 01')}/>
+											</div>
+
+
+											{/*<div className="form-group col-lg-6 col-md-12">
+												<label htmlFor="inputDatepicker">Dates</label>
+												 <div className="input-daterange input-group" id="inputDatepicker">
+
+
+													<input type="text" className="input-sm form-control" name="inputStart" id="inputStart" required placeholder="Start Date" onChange={e => this.fillInput(e.target)} value={this.state.inputStart} />
+													<input type="text" className="input-sm form-control" name="inputEnd" id="inputEnd" required placeholder="End Date" onChange={e => this.fillInput(e.target)} value={this.state.inputEnd} /> 
+												</div>
+											</div>*/}
 											<div className="form-group col-lg-6 col-md-12">
 												<label htmlFor="inputReference">Reference</label>
 												<input type="text" className="form-control" id="inputReference" placeholder="Reference" onChange={e => this.fillInput(e.target)} value={this.state.inputReference} />

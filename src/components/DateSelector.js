@@ -1,0 +1,42 @@
+import React from 'react';
+
+import Moment from 'moment';
+import momentLocalizer from 'react-widgets-moment';
+
+import { Calendar } from 'react-widgets';
+import "react-widgets/dist/css/react-widgets.css";
+
+Moment.locale('en');
+momentLocalizer();
+class DateSelector extends React.Component {
+	constructor() {
+		super();
+		this.state = {
+			
+		}
+	}
+
+	handlerOnChange = (value) => {
+		this.setState({ value });
+		this.props.onChange(this.props.calendarIdentifier, value);
+	}
+
+	render() {
+		return (
+			<Calendar className="mb-2 mt-1" id={this.props.idValue} 
+				dateFormat={dt => String(dt.getDate())} 
+				// dayFormat={day => ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'][day.getDay()]} 
+				// max={new Date()} 
+				// min={new Date()} 
+				max={this.props.max} 
+				min={this.props.min} 
+				value={this.state.value}
+				onChange={value => this.handlerOnChange(value)}
+				views={['month','year', 'decade']} 
+				footer={false} 
+  			/>
+		)
+	}
+}
+
+export default DateSelector;
