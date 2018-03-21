@@ -1,6 +1,6 @@
 import React from 'react';
 
-import untilNowApi from '../utils/until-now-api-client';
+import untilNowApi from '../../utils/until-now-api-client';
 
 class PanelNewCollection extends React.Component {
 	constructor() {

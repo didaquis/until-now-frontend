@@ -2,19 +2,26 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 
-function Nav(props){
-	return(
+function Nav() {
+	return (
 		<div className="row mb-8">
 			<nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
 				<a className="navbar-brand" href="/">Until Now</a>
-				<button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
-				 aria-expanded="false" aria-label="Toggle navigation">
+				<button
+					className="navbar-toggler"
+					type="button"
+					data-toggle="collapse"
+					data-target="#navbarCollapse"
+					aria-controls="navbarCollapse"
+					aria-expanded="false"
+					aria-label="Toggle navigation"
+				>
 					<span className="navbar-toggler-icon"></span>
 				</button>
 				<div className="collapse navbar-collapse" id="navbarCollapse">
 					<ul className="navbar-nav mr-auto">
 						<li className="nav-item">
-							<NavLink exact to='/collections' activeClassName='active' className="nav-link" replace>Collections</NavLink>
+							<NavLink exact to="/collections" activeClassName="active" className="nav-link" replace>Collections</NavLink>
 						</li>
 					</ul>
 					{/* <form className="form-inline mt-2 mt-md-0">
@@ -23,7 +30,7 @@ function Nav(props){
 				</div>
 			</nav>
 		</div>
-	)
+	);
 }
 
 export default Nav;

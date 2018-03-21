@@ -2,7 +2,7 @@ import React from 'react';
 
 import DateSelector from './DateSelector';
 
-import untilNowApi from '../utils/until-now-api-client';
+import untilNowApi from '../../utils/until-now-api-client';
 
 class PanelNewItem extends React.Component {
 	constructor() {
@@ -14,51 +14,51 @@ class PanelNewItem extends React.Component {
 			inputReference: '',
 			inputNotes: '',
 			idOfCollection: ''
-		}
+		};
 	}
 
-	componentWillMount(){
-		this.setState({idOfCollection: this.props.idOfCollection});
+	componentWillMount() {
+		this.setState({ idOfCollection: this.props.idOfCollection });
 	}
 
 	fillInput = (input) => {
-		if(input.id === 'inputName'){
+		if (input.id === 'inputName') {
 			this.setState({ inputName: input.value });
 		}
-		if(input.id === 'inputReference'){
+		if (input.id === 'inputReference') {
 			this.setState({ inputReference: input.value });
 		}
-		if(input.id === 'inputNotes'){
+		if (input.id === 'inputNotes') {
 			this.setState({ inputNotes: input.value });
 		}
 	}
 
-	handlerSubmit = () =>{
-		if( this.state.inputStart !== '' 
-			&& this.state.inputEnd !== '' 
-			&& (new Date(this.state.inputStart) < new Date(this.state.inputEnd) ) 
-		){
+	handlerSubmit = () => {
+		if (this.state.inputStart !== ''
+			&& this.state.inputEnd !== ''
+			&& (new Date(this.state.inputStart) < new Date(this.state.inputEnd))
+		) {
 			// Dates pass the validations...
-			untilNowApi.createItem(this.state.inputName, this.state.inputStart, this.state.inputEnd, this.state.inputReference, this.state.inputNotes, this.state.idOfCollection )
+			untilNowApi.createItem(this.state.inputName, this.state.inputStart, this.state.inputEnd, this.state.inputReference, this.state.inputNotes, this.state.idOfCollection)
 				.then(res => {
-					if(res.status === 'OK'){
+					if (res.status === 'OK') {
 						window.location.reload();
-					}else{
+					} else {
 						console.log(res);
 					}
 				})
 				.catch(err => console.error(err));
-		}else{
+		} else {
 			// Dates don't pass the validations...
 			console.log('Check calendar values! Select date are required');
 		}
 	}
 
 	handlerOnChangeCalendar = (calendar, value) => {
-		if(calendar === 'dateStart'){
+		if (calendar === 'dateStart') {
 			this.setState({ inputStart: value });
 		}
-		if(calendar === 'dateEnd'){
+		if (calendar === 'dateEnd') {
 			this.setState({ inputEnd: value });
 		}
 	}
@@ -72,7 +72,7 @@ class PanelNewItem extends React.Component {
 							<div className="card">
 								<div className="card-body">
 									<h4 className="card-title">Add new equipment</h4>
-									<form onSubmit={(e) => { e.preventDefault(); this.handlerSubmit() }}>
+									<form onSubmit={(e) => { e.preventDefault(); this.handlerSubmit(); }}>
 										<div className="form-row">
 											<div className="form-group col-md-12">
 												<label htmlFor="inputName">Name <span className="text-danger">*</span></label>
@@ -80,22 +80,22 @@ class PanelNewItem extends React.Component {
 											</div>
 											<div className="form-group col-lg-6 col-md-12">
 												<label htmlFor="startDate">Start Date <span className="text-danger">*</span></label>
-												<DateSelector 
-													calendarIdentifier={'dateStart'} 
-													onChange={this.handlerOnChangeCalendar} 
-													idValue={'startDate'} 
-													min={new Date('2010, 01, 01')} 
-													max={new Date()} 
+												<DateSelector
+													calendarIdentifier={'dateStart'}
+													onChange={this.handlerOnChangeCalendar}
+													idValue={'startDate'}
+													min={new Date('2010, 01, 01')}
+													max={new Date()}
 												/>
 											</div>
 											<div className="form-group col-lg-6 col-md-12">
 												<label htmlFor="endDate">End Date <span className="text-danger">*</span></label>
-												<DateSelector 
-													calendarIdentifier={'dateEnd'} 
-													onChange={this.handlerOnChangeCalendar} 
-													idValue={'endDate'} 
-													min={new Date(+new Date() + 86400000)} 
-													max={new Date('2085, 01, 01')} 
+												<DateSelector
+													calendarIdentifier={'dateEnd'}
+													onChange={this.handlerOnChangeCalendar}
+													idValue={'endDate'}
+													min={new Date(+new Date() + 86400000)}
+													max={new Date('2085, 01, 01')}
 												/>
 											</div>
 											<div className="form-group col-lg-6 col-md-12">
@@ -107,7 +107,7 @@ class PanelNewItem extends React.Component {
 												<input type="text" className="form-control" id="inputNotes" placeholder="Notes" onChange={e => this.fillInput(e.target)} value={this.state.inputNotes} />
 											</div>
 										</div>
-										<button onClick={ (e) => { e.preventDefault(); this.props.onClick() }} className="btn btn-secondary">Close</button>
+										<button onClick={(e) => { e.preventDefault(); this.props.onClick(); }} className="btn btn-secondary">Close</button>
 										<button type="submit" className="btn btn-success float-right">Create</button>
 									</form>
 								</div>
@@ -115,10 +115,9 @@ class PanelNewItem extends React.Component {
 						</div>
 					</div>
 				</section>
-			)
-		} else {
-			return null
+			);
 		}
+		return null;
 	}
 }
 
