@@ -76,7 +76,8 @@ class PanelNewItem extends React.Component {
 										<div className="form-row">
 											<div className="form-group col-md-12">
 												<label htmlFor="inputName">Name <span className="text-danger">*</span></label>
-												<input type="text" className="form-control" id="inputName" required autoFocus placeholder="Name" onChange={e => this.fillInput(e.target)} value={this.state.inputName} />
+												<input type="text" className="form-control" id="inputName" required autoFocus placeholder="Name" onChange={e => this.fillInput(e.target)} value={this.state.inputName} pattern="^\w+( \-\w+)*$" />
+												<small id="inputNamenHelp" className="form-text text-muted">Valid chars: A-Z a-z 0-9 _ and spaces or hyphens between words</small>
 											</div>
 											<div className="form-group col-lg-6 col-md-12">
 												<label htmlFor="startDate">Start Date <span className="text-danger">*</span></label>
