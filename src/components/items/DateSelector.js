@@ -4,7 +4,7 @@ import Moment from 'moment';
 import momentLocalizer from 'react-widgets-moment';
 
 import { Calendar } from 'react-widgets';
-import "react-widgets/dist/css/react-widgets.css";
+import 'react-widgets/dist/css/react-widgets.css';
 
 Moment.locale('en');
 momentLocalizer();
@@ -12,8 +12,7 @@ class DateSelector extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			
-		}
+		};
 	}
 
 	handlerOnChange = (value) => {
@@ -23,16 +22,17 @@ class DateSelector extends React.Component {
 
 	render() {
 		return (
-			<Calendar className="mb-2 mt-1" id={this.props.idValue} 
-				//dateFormat={dt => String(dt.getDate())} 
-				max={this.props.max} 
-				min={this.props.min} 
+			<Calendar
+				className="mb-2 mt-1"
+				id={this.props.idValue}
+				max={this.props.max}
+				min={this.props.min}
 				value={this.state.value}
 				onChange={value => this.handlerOnChange(value)}
-				views={['year', 'decade']} 
-				footer={false}  
-  			/>
-		)
+				views={['year', 'decade']}
+				footer={false}
+			/>
+		);
 	}
 }
 
