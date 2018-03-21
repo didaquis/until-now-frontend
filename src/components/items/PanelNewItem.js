@@ -54,6 +54,13 @@ class PanelNewItem extends React.Component {
 		}
 	}
 
+	handlerClose = () => {
+		this.setState({
+			inputName: '', inputStart: '', inputEnd: '', inputReference: '', inputNotes: ''
+		});
+		this.props.onClick();
+	}
+
 	handlerOnChangeCalendar = (calendar, value) => {
 		if (calendar === 'dateStart') {
 			this.setState({ inputStart: value });
@@ -108,7 +115,7 @@ class PanelNewItem extends React.Component {
 												<input type="text" className="form-control" id="inputNotes" placeholder="Notes" onChange={e => this.fillInput(e.target)} value={this.state.inputNotes} />
 											</div>
 										</div>
-										<button onClick={(e) => { e.preventDefault(); this.props.onClick(); }} className="btn btn-secondary">Close</button>
+										<button onClick={(e) => { e.preventDefault(); this.handlerClose(); }} className="btn btn-secondary">Close</button>
 										<button type="submit" className="btn btn-success float-right">Create</button>
 									</form>
 								</div>
