@@ -8,8 +8,8 @@ class Home extends React.Component {
 	componentWillMount() {
 		// This is a trick for wake up the server.
 		untilNowApi.ping()
-			.then()
-			.catch();
+			.then(() => null)
+			.catch(() => null);
 	}
 
 	render() {
