@@ -17,7 +17,7 @@ class ModalDelete extends React.Component {
 
 	componentWillReceiveProps(nextProps) {
 		if (nextProps.dataForModalDelete !== '') {
-			this.setState({ dataForModalDelete: nextProps.dataForModalDelete, target:nextProps.target });
+			this.setState({ dataForModalDelete: nextProps.dataForModalDelete, target: nextProps.target });
 			this.toggle();
 		}
 	}

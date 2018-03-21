@@ -17,7 +17,9 @@
     "arrow-parens": 0,
     "class-methods-use-this": 1,
     "comma-dangle": 0,
-    "jsx-a11y/anchor-is-valid": 1,
+    "camelcase": 1,
+    "prefer-template": 1,
+    "jsx-a11y/anchor-is-valid": 2,
     "jsx-a11y/click-events-have-key-events": 0,
     "jsx-a11y/no-autofocus": 0,
     "jsx-a11y/label-has-for": [
