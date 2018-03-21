@@ -1,6 +1,7 @@
 import React from 'react';
 
 import DateSelector from './DateSelector';
+import MessageValidateForm from '../MessageValidateForm';
 
 import untilNowApi from '../../utils/until-now-api-client';
 
@@ -54,6 +55,13 @@ class PanelNewItem extends React.Component {
 		}
 	}
 
+	handlerClose = () => {
+		this.setState({
+			inputName: '', inputStart: '', inputEnd: '', inputReference: '', inputNotes: ''
+		});
+		this.props.onClick();
+	}
+
 	handlerOnChangeCalendar = (calendar, value) => {
 		if (calendar === 'dateStart') {
 			this.setState({ inputStart: value });
@@ -76,7 +84,12 @@ class PanelNewItem extends React.Component {
 										<div className="form-row">
 											<div className="form-group col-md-12">
 												<label htmlFor="inputName">Name <span className="text-danger">*</span></label>
-												<input type="text" className="form-control" id="inputName" required autoFocus placeholder="Name" onChange={e => this.fillInput(e.target)} value={this.state.inputName} />
+												<input type="text" className="form-control" id="inputName" required autoFocus placeholder="Name" onChange={e => this.fillInput(e.target)} value={this.state.inputName} pattern="^\w+([ \w-]+)*$" />
+												<small id="inputNameHelp" className="form-text text-muted">Valid chars: A-Z a-z 0-9 _ and spaces or hypens between words</small>
+												{
+													(this.state.inputName === '') ?
+														(<MessageValidateForm text={'Provide name of equipment'} />) : ('')
+												}
 											</div>
 											<div className="form-group col-lg-6 col-md-12">
 												<label htmlFor="startDate">Start Date <span className="text-danger">*</span></label>
@@ -87,6 +100,10 @@ class PanelNewItem extends React.Component {
 													min={new Date('2010, 01, 01')}
 													max={new Date()}
 												/>
+												{
+													(this.state.inputStart === '') ?
+														(<MessageValidateForm text={'You must select a date!'} />) : ('')
+												}
 											</div>
 											<div className="form-group col-lg-6 col-md-12">
 												<label htmlFor="endDate">End Date <span className="text-danger">*</span></label>
@@ -97,6 +114,10 @@ class PanelNewItem extends React.Component {
 													min={new Date(+new Date() + 86400000)}
 													max={new Date('2085, 01, 01')}
 												/>
+												{
+													(this.state.inputEnd === '') ?
+														(<MessageValidateForm text={'You must select a date!'} />) : ('')
+												}
 											</div>
 											<div className="form-group col-lg-6 col-md-12">
 												<label htmlFor="inputReference">Reference</label>
@@ -107,7 +128,7 @@ class PanelNewItem extends React.Component {
 												<input type="text" className="form-control" id="inputNotes" placeholder="Notes" onChange={e => this.fillInput(e.target)} value={this.state.inputNotes} />
 											</div>
 										</div>
-										<button onClick={(e) => { e.preventDefault(); this.props.onClick(); }} className="btn btn-secondary">Close</button>
+										<button onClick={(e) => { e.preventDefault(); this.handlerClose(); }} className="btn btn-secondary">Close</button>
 										<button type="submit" className="btn btn-success float-right">Create</button>
 									</form>
 								</div>

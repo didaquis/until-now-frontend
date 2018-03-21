@@ -97,7 +97,7 @@ Gestión de tareas: [Kanban](https://trello.com/b/x0Vl2LAY/until-now)
 ------
 ### Sprint tercera semana
 #### Lunes
-- [ ] Implementar el datepicker en frontend
+- [x] Implementar el datepicker en frontend
 #### Martes
 - [ ] API server: sistema de login
 - [ ] API client: sistema de login
