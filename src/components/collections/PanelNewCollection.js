@@ -28,6 +28,11 @@ class PanelNewCollection extends React.Component {
 			.catch(err => console.error(err));
 	}
 
+	handlerClose = () => {
+		this.setState({ nameCollectionInput: '' });
+		this.props.onClick();
+	}
+
 	render() {
 		if (this.props.show) {
 			return (
@@ -56,7 +61,7 @@ class PanelNewCollection extends React.Component {
 											/>
 											<small id="nameCollectionHelp" className="form-text text-muted">At least 3 chars. Spaces are not valid chars</small>
 										</div>
-										<button onClick={(e) => { e.preventDefault(); this.props.onClick(); }} className="btn btn-secondary">Close
+										<button onClick={(e) => { e.preventDefault(); this.handlerClose(); }} className="btn btn-secondary">Close
 										</button>
 										<button type="submit" className="btn btn-success float-right">Create</button>
 									</form>
