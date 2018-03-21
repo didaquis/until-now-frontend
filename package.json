@@ -1,6 +1,6 @@
 {
   "name": "until-now-frontend",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "private": true,
   "dependencies": {
     "moment": "^2.21.0",
@@ -12,14 +12,14 @@
     "react-widgets": "^4.2.2",
     "react-widgets-moment": "^4.0.9",
     "reactstrap": "^5.0.0-beta.3",
-    "until-now-client-api": "^0.0.5"
+    "until-now-client-api": "^0.0.6"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "update_dependencies": "npm update --save"
+    "update-dependencies": "npm update --save"
   },
   "devDependencies": {
     "eslint": "^4.19.0",
