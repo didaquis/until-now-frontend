@@ -1,5 +1,7 @@
 import React from 'react';
 
+import MessageValidateForm from '../MessageValidateForm';
+
 import untilNowApi from '../../utils/until-now-api-client';
 
 class PanelNewCollection extends React.Component {
@@ -25,7 +27,7 @@ class PanelNewCollection extends React.Component {
 					console.log(res);
 				}
 			})
-			.catch(err => console.error(err));
+			.catch(err => console.log(err));
 	}
 
 	handlerClose = () => {
@@ -60,6 +62,10 @@ class PanelNewCollection extends React.Component {
 												value={this.state.nameCollectionInput}
 											/>
 											<small id="nameCollectionHelp" className="form-text text-muted">At least 3 chars. Spaces are not valid chars</small>
+											{
+												(this.state.nameCollectionInput === '') ?
+													(<MessageValidateForm text={'Provide name of collection'} />) : ('')
+											}
 										</div>
 										<button onClick={(e) => { e.preventDefault(); this.handlerClose(); }} className="btn btn-secondary">Close
 										</button>
