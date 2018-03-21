@@ -7,7 +7,11 @@
   },
   "extends": "airbnb",
   "parser": "babel-eslint",
-  "plugins": ["import", "jsx-a11y", "react"],
+  "plugins": [
+    "import",
+    "jsx-a11y",
+    "react"
+  ],
   "rules": {
     "arrow-body-style": 0,
     "arrow-parens": 0,
@@ -15,13 +19,18 @@
     "comma-dangle": 0,
     "jsx-a11y/anchor-is-valid": 1,
     "jsx-a11y/click-events-have-key-events": 0,
-    "jsx-a11y/no-autofocus": 1,
+    "jsx-a11y/no-autofocus": 0,
     "jsx-a11y/label-has-for": [
       2,
       {
-        "components": ["label"],
+        "components": [
+          "label"
+        ],
         "required": {
-          "some": ["nesting", "id"]
+          "some": [
+            "nesting",
+            "id"
+          ]
         },
         "allowChildren": false
       }
@@ -39,9 +48,18 @@
     "react/react-in-jsx-scope": "error",
     "react/self-closing-comp": 0,
     "react/prop-types": 0,
-    "indent": ["error", "tab"],
+    "indent": [
+      "error",
+      "tab"
+    ],
     "no-tabs": 0,
-    "react/jsx-indent-props": [1, "tab"],
-    "react/jsx-indent": [1, "tab"]
+    "react/jsx-indent-props": [
+      1,
+      "tab"
+    ],
+    "react/jsx-indent": [
+      1,
+      "tab"
+    ]
   }
 }
