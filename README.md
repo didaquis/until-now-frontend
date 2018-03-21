@@ -86,9 +86,9 @@ Gestión de tareas: [Kanban](https://trello.com/b/x0Vl2LAY/until-now)
 - [x] API client: creación items
 - [x] TDD creación y eliminación de items
 #### Jueves
-- [ ] Bug fixings
-- [ ] Implementar en frontend la creación de items
-- [ ] Solicitar feedback
+- [x] Bug fixings
+- [x] Implementar en frontend la creación de items
+- [x] Solicitar feedback
 #### Viernes
 - [ ] Testing
 - [ ] HotFixing
@@ -97,7 +97,7 @@ Gestión de tareas: [Kanban](https://trello.com/b/x0Vl2LAY/until-now)
 ------
 ### Sprint tercera semana
 #### Lunes
-- [ ] Implementar el datepicker en frontend
+- [x] Implementar el datepicker en frontend
 #### Martes
 - [ ] API server: sistema de login
 - [ ] API client: sistema de login

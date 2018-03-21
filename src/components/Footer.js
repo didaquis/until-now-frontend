@@ -1,7 +1,6 @@
 import React from 'react';
 
-function Footer(props) {
-
+function Footer() {
 	return (
 		<footer className="container mt-7">
 			<nav className="navbar fixed-bottom navbar-dark bg-dark">
@@ -12,7 +11,7 @@ function Footer(props) {
 				</div>
 			</nav>
 		</footer>
-	)
+	);
 }
 
 export default Footer;

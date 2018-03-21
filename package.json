@@ -1,12 +1,16 @@
 {
   "name": "until-now-frontend",
-  "version": "0.0.9",
+  "version": "0.1.3",
   "private": true,
   "dependencies": {
+    "moment": "^2.21.0",
     "react": "^16.2.0",
+    "react-dates": "^16.3.6",
     "react-dom": "^16.2.0",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.1",
+    "react-widgets": "^4.2.2",
+    "react-widgets-moment": "^4.0.9",
     "reactstrap": "^5.0.0-beta.3",
     "until-now-client-api": "^0.0.5"
   },
@@ -16,5 +20,12 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "update_dependencies": "npm update --save"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "^7.7.0"
   }
 }
