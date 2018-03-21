@@ -1,0 +1,43 @@
+{
+  "env": {
+    "browser": true,
+    "node": true,
+    "mocha": true,
+    "es6": true
+  },
+  "extends": "airbnb",
+  "parser": "babel-eslint",
+  "plugins": ["import", "jsx-a11y", "react"],
+  "rules": {
+    "arrow-body-style": 0,
+    "arrow-parens": 0,
+    "class-methods-use-this": 1,
+    "comma-dangle": 0,
+    "jsx-a11y/anchor-is-valid": 1,
+    "jsx-a11y/click-events-have-key-events": 0,
+    "jsx-a11y/no-autofocus": 1,
+    "jsx-a11y/label-has-for": [
+      2,
+      {
+        "components": ["label"],
+        "required": {
+          "some": ["nesting", "id"]
+        },
+        "allowChildren": false
+      }
+    ],
+    "no-plusplus": 0,
+    "no-return-assign": 0,
+    "no-unused-vars": "warn",
+    "react/jsx-filename-extension": 0,
+    "react/prefer-stateless-function": 1,
+    "react/no-did-update-set-state": "error",
+    "react/no-unknown-property": "error",
+    "react/react-in-jsx-scope": "error",
+    "react/prop-types": 0,
+    "indent": ["error", "tab"],
+    "no-tabs": 0,
+    "react/jsx-indent-props": [1, "tab"],
+    "react/jsx-indent": [1, "tab"]
+  }
+}

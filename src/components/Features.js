@@ -1,13 +1,14 @@
 import React from 'react';
 
-function Features(props){
-	let reverseClassNameForText, reverseClassNameForPicture = '';
-	if(props.reverse){
+function Features(props) {
+	let reverseClassNameForText;
+	let reverseClassNameForPicture = '';
+	if (props.reverse) {
 		reverseClassNameForText = 'order-md-2';
 		reverseClassNameForPicture = 'order-md-1';
 	}
 
-	return(
+	return (
 		<section>
 			<hr className="featurette-divider mt-5 mb-5" />
 			<div className="row featurette">
@@ -20,7 +21,7 @@ function Features(props){
 				</div>
 			</div>
 		</section>
-	)
+	);
 }
 
 export default Features;
