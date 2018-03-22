@@ -17,7 +17,11 @@ function ItemListedSummary(props) {
 					</tr>
 				</thead>
 				<tbody>
-					<ProgressBar colorOfProgressBar={colorOfProgressBar} progressNumber={progressNumber} />
+					<ProgressBar
+						colorOfProgressBar={colorOfProgressBar}
+						progressNumber={progressNumber}
+						dateEnd={props.dateEnd}
+					/>
 				</tbody>
 			</table>
 		</div>
