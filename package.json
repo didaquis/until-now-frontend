@@ -1,6 +1,6 @@
 {
   "name": "until-now-frontend",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "private": true,
   "dependencies": {
     "moment": "^2.21.0",
@@ -12,7 +12,7 @@
     "react-widgets": "^4.2.2",
     "react-widgets-moment": "^4.0.9",
     "reactstrap": "^5.0.0-beta.3",
-    "until-now-client-api": "^0.0.7"
+    "until-now-client-api": "^0.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -25,7 +25,7 @@
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.9.0",
-    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-jsx-a11y": "5.1.1",
     "eslint-plugin-react": "^7.7.0"
   }
 }
