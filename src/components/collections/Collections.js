@@ -20,7 +20,7 @@ class Collections extends React.Component {
 		};
 	}
 
-	componentWillMount() {
+	componentDidMount() {
 		untilNowApi.listCollections()
 			.then(res => this.refreshList(res))
 			.catch(error => console.error(error));
