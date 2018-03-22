@@ -92,7 +92,6 @@ class Items extends React.Component {
 									notes={item.notes}
 									reference={item.refNumber}
 									title={item.name}
-									url={item.url}
 								/>
 							);
 						})
