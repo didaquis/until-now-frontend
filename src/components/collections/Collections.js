@@ -15,19 +15,19 @@ class Collections extends React.Component {
 		this.state = {
 			list: [],
 			showPanelForNewData: false,
-			showButtonNewElement: true, 
+			showButtonNewElement: true,
 			dataForModalDelete: ''
 		};
 	}
 
-	componentWillMount() {
+	componentDidMount() {
 		untilNowApi.listCollections()
-			.then( res => this.refreshList(res) )
+			.then(res => this.refreshList(res))
 			.catch(error => console.error(error));
 	}
 
 	componentWillReceiveProps() {
-		this.setState({dataForModalDelete: ''});
+		this.setState({ dataForModalDelete: '' });
 	}
 
 	refreshList = (results) => {
@@ -73,11 +73,11 @@ class Collections extends React.Component {
 				<HrElement />
 				<div className="row">
 					{
-						this.state.list.map( (collection) =>{
+						this.state.list.map((collection) => {
 							return (
 								<CollectionListed key={collection._id} id={collection._id} title={collection.name} count={collection.itemsCount} handlerOnClickButtonForOpenModal={this.handlerOnClickButtonForOpenModal} />
-							)
-						} )
+							);
+						})
 					}
 				</div>
 				{noDataToShow}

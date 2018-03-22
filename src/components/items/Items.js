@@ -21,7 +21,7 @@ class Items extends React.Component {
 		};
 	}
 
-	componentWillMount() {
+	componentDidMount() {
 		untilNowApi.listItemsInCollection(this.props.match.params.idOfCollection)
 			.then(res => this.refreshList(res))
 			.catch(error => console.error(error));
