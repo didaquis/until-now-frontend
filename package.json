@@ -1,6 +1,6 @@
 {
   "name": "until-now-frontend",
-  "version": "0.1.8",
+  "version": "0.2.1",
   "private": true,
   "dependencies": {
     "moment": "^2.21.0",
