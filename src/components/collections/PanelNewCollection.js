@@ -12,10 +12,9 @@ class PanelNewCollection extends React.Component {
 		};
 	}
 
-	fillInput = (input) => {
-		if (input.id === 'nameCollectionInput') {
-			this.setState({ nameCollectionInput: input.value });
-		}
+	fillInput = (e) => {
+		const prop = e.target.name;
+		this.setState({ [prop]: e.target.value });
 	}
 
 	handlerSubmit = () => {
@@ -53,12 +52,13 @@ class PanelNewCollection extends React.Component {
 												type="text"
 												className="form-control"
 												id="nameCollectionInput"
+												name="nameCollectionInput"
 												aria-describedby="nameCollectionHelp"
 												placeholder="Enter name of collection"
 												required
 												pattern="[A-Za-z0-9.\-_\*\/\|]{3,}"
 												autoFocus
-												onChange={e => this.fillInput(e.target)}
+												onChange={e => this.fillInput(e)}
 												value={this.state.nameCollectionInput}
 											/>
 											<small id="nameCollectionHelp" className="form-text text-muted">At least 3 chars. Spaces are not valid chars</small>

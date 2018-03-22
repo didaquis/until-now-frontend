@@ -1,5 +1,6 @@
 html, body {
-	background-image: url(../images/mooning.png);/* Background pattern from Subtle Patterns */
+	background-image: url(../images/mooning.png);
+	/* Background pattern from Subtle Patterns */
 	background-repeat: repeat;
 }
 
@@ -11,6 +12,30 @@ html, body {
 	margin-top: 85px;
 }
 
-.datepicker{
-	z-index: 1200 !important;
+.loader {
+	border: 16px solid #f3f3f3;
+	border-radius: 50%;
+	border-top: 16px solid #5A6069;
+	width: 120px;
+	height: 120px;
+	-webkit-animation: spin 1.5s linear infinite;
+	/* Safari */
+	animation: spin 1.5s linear infinite;
+}
+/* Safari */
+@-webkit-keyframes spin {
+	0% {
+		-webkit-transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+	}
+}
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
 }

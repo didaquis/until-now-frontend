@@ -1,3 +1,8 @@
+/**
+ * Convert Date object to this format (YYYY-MM-DD)
+ * @param {Date} date
+ * @returns {string} String date (YYYY-MM-DD)
+ */
 function formatDate(date) {
 	const d = new Date(date);
 	let month = '' + (d.getMonth() + 1);
@@ -10,10 +15,20 @@ function formatDate(date) {
 	return [year, month, day].join('-');
 }
 
+/**
+ * Create a new Date
+ * @returns {string} Date object (YYYY-MM-DD)
+ */
 function today() {
 	return new Date().toISOString().slice(0, 10);
 }
 
+/**
+ * Calculate difference in days between two dates
+ * @param {Date} startDate
+ * @param {Date} endDate
+ * @returns {number}
+ */
 Date.daysBetween = (startDate, endDate) => {
 	// Get 1 day in milliseconds
 	const oneDay = 1000 * 60 * 60 * 24;
@@ -29,6 +44,13 @@ Date.daysBetween = (startDate, endDate) => {
 	return Math.round(differenceMs / oneDay);
 };
 
+/**
+ * Calculate number for ProgressBar component
+ * @param {string} startDate
+ * @param {string} todayDate
+ * @param {string} endDate
+ * @returns {number} integer number from 1 to 100
+ */
 function calculateNumberForProgress(startDate, todayDate, endDate) {
 	const daysFromStartToEndDate = Date.daysBetween(startDate, endDate);
 	let daysFromStartDateToToday = Date.daysBetween(startDate, todayDate);
@@ -49,8 +71,13 @@ function calculateNumberForProgress(startDate, todayDate, endDate) {
 	return result;
 }
 
+/**
+ * Determine color of ProgressBar component
+ * @param {number} int
+ * @returns {string}
+ */
 function calculateColorOfProgressBar(int) {
-	if (int > 80) {
+	if (int > 85) {
 		return 'danger';
 	} else if (int > 60) {
 		return 'warning';

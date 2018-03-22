@@ -6,6 +6,7 @@ import HrElement from '../HrElement';
 import ItemListed from './ItemListed';
 import ModalDelete from '../ModalDelete';
 import NoData from '../NoData';
+import Spinner from '../Spinner';
 
 import untilNowApi from '../../utils/until-now-api-client';
 
@@ -15,6 +16,7 @@ class Items extends React.Component {
 		super();
 		this.state = {
 			list: [],
+			searching: true,
 			showPanelForNewData: false,
 			showButtonNewElement: true,
 			dataForModalDelete: ''
@@ -29,7 +31,7 @@ class Items extends React.Component {
 
 	refreshList = (results) => {
 		if (results.status === 'OK') {
-			this.setState({ list: results.data });
+			this.setState({ list: results.data, searching: false });
 		}
 	}
 
@@ -55,8 +57,13 @@ class Items extends React.Component {
 
 	render() {
 		let noDataToShow;
-		if (this.state.list.length === 0) {
+		if (this.state.list.length === 0 && !this.state.searching) {
 			noDataToShow = <NoData />;
+		}
+
+		let searching;
+		if (this.state.searching) {
+			searching = <Spinner />;
 		}
 
 		return (
@@ -85,12 +92,12 @@ class Items extends React.Component {
 									notes={item.notes}
 									reference={item.refNumber}
 									title={item.name}
-									url={item.url}
 								/>
 							);
 						})
 					}
 				</div>
+				{searching}
 				{noDataToShow}
 				<ModalDelete
 					textForBody={'Are you sure you want to delete this equipment?'}

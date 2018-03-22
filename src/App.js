@@ -5,6 +5,7 @@ import Nav from './components/Nav';
 import Home from './components/home/Home';
 import Collections from './components/collections/Collections';
 import Items from './components/items/Items';
+import ItemsSummary from './components/items/ItemsSummary';
 import Footer from './components/Footer';
 import Error404 from './components/Error404';
 
@@ -17,6 +18,7 @@ const App = () => {
 				<Switch>
 					<Route exact path="/" component={Home} />
 					<Route exact path="/collections" component={Collections} />
+					<Route exact path="/items" component={ItemsSummary} />
 					<Route path="/collection/:idOfCollection" component={Items} />
 					<Route component={Error404} />
 				</Switch>

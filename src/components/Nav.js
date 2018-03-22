@@ -23,6 +23,9 @@ function Nav() {
 						<li className="nav-item">
 							<NavLink exact to="/collections" activeClassName="active" className="nav-link" replace>Collections</NavLink>
 						</li>
+						<li className="nav-item">
+							<NavLink exact to="/items" activeClassName="active" className="nav-link" replace>Items</NavLink>
+						</li>
 					</ul>
 					{/* <form className="form-inline mt-2 mt-md-0">
 						<button className="btn btn-light my-2 my-sm-0" type="submit">Logout</button>
