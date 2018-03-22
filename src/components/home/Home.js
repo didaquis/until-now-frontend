@@ -5,7 +5,7 @@ import Features from './Features';
 import untilNowApi from '../../utils/until-now-api-client';
 
 class Home extends React.Component {
-	componentWillMount() {
+	componentDidMount() {
 		// This is a trick for wake up the server.
 		untilNowApi.ping()
 			.then(() => null)
