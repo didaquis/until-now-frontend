@@ -18,16 +18,16 @@ class Home extends React.Component {
 				<MainHeader />
 				<Features
 					reverse
-					title={'All your equipment well classified'}
-					subtitle={'Organize your materials easily'}
+					title={'All your equipment well classified.'}
+					subtitle={'Organize your materials easily.'}
 					text={'Create collections and distribute your materials according to their category. Collections are sorted alphabetically so you can fast and efficiently find what you are looking for'}
 					img={require('../../images/features_1.png')}
 				/>
 				<Features
 					reverse={false}
-					title={'Oh yeah, it\'s that good.'}
-					subtitle={'See for yourself.'}
-					text={'Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.'}
+					title={'Visualize straight away the age of your equipment.'}
+					subtitle={'The color bar shows  its renewal date.'}
+					text={'Register all your equipment indicating the date of purchase and the expected replacement date. “Until Now” calculates how much time has passed and it’ll show you'}
 					img={require('../../images/features_2.png')}
 				/>
 			</section>
