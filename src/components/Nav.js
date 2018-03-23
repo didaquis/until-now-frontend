@@ -21,10 +21,26 @@ function Nav() {
 				<div className="collapse navbar-collapse" id="navbarCollapse">
 					<ul className="navbar-nav mr-auto">
 						<li className="nav-item">
-							<NavLink exact to="/collections" activeClassName="active" className="nav-link" replace>Collections</NavLink>
+							<NavLink
+								exact
+								to="/categories"
+								activeClassName="active"
+								className="nav-link"
+								replace
+							>
+								Categories
+							</NavLink>
 						</li>
 						<li className="nav-item">
-							<NavLink exact to="/items" activeClassName="active" className="nav-link" replace>Items</NavLink>
+							<NavLink
+								exact
+								to="/summary"
+								activeClassName="active"
+								className="nav-link"
+								replace
+							>
+								Equipment summary
+							</NavLink>
 						</li>
 					</ul>
 					{/* <form className="form-inline mt-2 mt-md-0">

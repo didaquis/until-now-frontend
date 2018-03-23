@@ -17,9 +17,9 @@ const App = () => {
 				<Nav />
 				<Switch>
 					<Route exact path="/" component={Home} />
-					<Route exact path="/collections" component={Collections} />
-					<Route exact path="/items" component={ItemsSummary} />
-					<Route path="/collection/:idOfCollection" component={Items} />
+					<Route exact path="/categories" component={Collections} />
+					<Route exact path="/summary" component={ItemsSummary} />
+					<Route path="/category/:idOfCollection" component={Items} />
 					<Route component={Error404} />
 				</Switch>
 				<Footer />

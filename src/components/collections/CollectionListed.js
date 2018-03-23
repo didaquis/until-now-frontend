@@ -21,9 +21,9 @@ function CollectionListed(props) {
 						className="btn btn-outline-danger btn-sm mr-2"
 						onClick={(e) => { e.preventDefault(); props.handlerOnClickButtonForOpenModal(props.id); }}
 					>
-						Delete collection
+						Delete category
 					</button>
-					<NavLink exact to={`/collection/${props.id}`} className="btn btn-outline-primary btn-sm">View equipment</NavLink>
+					<NavLink exact to={`/category/${props.id}`} className="btn btn-outline-primary btn-sm">View equipment</NavLink>
 				</div>
 			</div>
 		</div>

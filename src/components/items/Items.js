@@ -70,7 +70,7 @@ class Items extends React.Component {
 			<section>
 				<Header
 					title={'Equipment'}
-					subtitle={'View and manage all your technical gear of this collection'}
+					subtitle={'View and manage all the technical gear of this category'}
 				/>
 				<PanelNewItem
 					show={this.state.showPanelForNewData}
