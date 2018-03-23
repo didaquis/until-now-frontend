@@ -17,7 +17,12 @@ function ProgressBar(props) {
 					>
 					</div>
 				</div>
-				<small className="form-text text-muted text-center">End Date: {formatDate(props.dateEnd)}</small>
+				{
+					(props.dateEnd) ?
+						(<small className="form-text text-muted text-center">End Date: {formatDate(props.dateEnd)}</small>)
+						:
+						('')
+				}
 			</th>
 		</tr>
 	);

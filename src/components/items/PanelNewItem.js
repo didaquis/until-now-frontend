@@ -101,7 +101,6 @@ class PanelNewItem extends React.Component {
 													calendarIdentifier={'dateStart'}
 													onChange={this.handlerOnChangeCalendar}
 													idValue={'startDate'}
-													min={new Date('2010, 01, 01')}
 													max={new Date()}
 												/>
 												{
@@ -116,7 +115,6 @@ class PanelNewItem extends React.Component {
 													onChange={this.handlerOnChangeCalendar}
 													idValue={'endDate'}
 													min={new Date(+new Date() + 86400000)}
-													max={new Date('2085, 01, 01')}
 												/>
 												{
 													(this.state.inputEnd === '') ?
