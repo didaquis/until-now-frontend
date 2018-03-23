@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 function Nav() {
 	return (
 		<div className="row mb-8">
-			<nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+			<nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark nav-padd">
 				<a className="navbar-brand" href="/">Until Now</a>
 				<button
 					className="navbar-toggler"

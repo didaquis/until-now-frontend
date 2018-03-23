@@ -13,7 +13,7 @@ import Error404 from './components/Error404';
 const App = () => {
 	return (
 		<HashRouter>
-			<div className="container-fluid p-4">
+			<div className="container-fluid p-4 view">
 				<Nav />
 				<Switch>
 					<Route exact path="/" component={Home} />
