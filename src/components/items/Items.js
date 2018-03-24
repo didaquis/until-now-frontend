@@ -6,7 +6,7 @@ import HrElement from '../HrElement';
 import ItemListed from './ItemListed';
 import ModalDelete from '../ModalDelete';
 import NoData from '../NoData';
-import Spinner from '../Spinner';
+import Spinner from '../Spinner/Spinner';
 
 import untilNowApi from '../../utils/until-now-api-client';
 
