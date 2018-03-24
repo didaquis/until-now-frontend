@@ -3,7 +3,7 @@ import Header from '../Header';
 import HrElement from '../HrElement';
 import ItemListedSummary from './ItemListedSummary';
 import NoData from '../NoData';
-import Spinner from '../Spinner';
+import Spinner from '../Spinner/Spinner';
 
 import untilNowApi from '../../utils/until-now-api-client';
 
@@ -44,7 +44,7 @@ class ItemsSummary extends React.Component {
 			<section>
 				<Header
 					title={'Equipment summary'}
-					subtitle={'A quick preview of all your equipment'}
+					subtitle={'A quick preview of all your equipment ordered by limit date'}
 				/>
 				<HrElement />
 				<div className="row">

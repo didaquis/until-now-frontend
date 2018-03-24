@@ -42,11 +42,11 @@ class PanelNewCollection extends React.Component {
 						<div className="col-md-8 offset-md-2">
 							<div className="card">
 								<div className="card-body">
-									<h4 className="card-title">Add new collection</h4>
+									<h4 className="card-title">Add new category</h4>
 									<form onSubmit={(e) => { e.preventDefault(); this.handlerSubmit(); }}>
 										<div className="form-group">
 											<label htmlFor="nameCollectionInput">
-												Name of collection
+												Name of category
 											</label>
 											<input
 												type="text"
@@ -54,7 +54,7 @@ class PanelNewCollection extends React.Component {
 												id="nameCollectionInput"
 												name="nameCollectionInput"
 												aria-describedby="nameCollectionHelp"
-												placeholder="Enter name of collection"
+												placeholder="Enter name of category"
 												required
 												pattern="[A-Za-z0-9.\-_\*\/\|]{3,}"
 												autoFocus
@@ -64,7 +64,7 @@ class PanelNewCollection extends React.Component {
 											<small id="nameCollectionHelp" className="form-text text-muted">At least 3 chars. Spaces are not valid chars</small>
 											{
 												(this.state.nameCollectionInput === '') ?
-													(<MessageValidateForm text={'Provide name of collection'} />) : ('')
+													(<MessageValidateForm text={'Provide name of category'} />) : ('')
 											}
 										</div>
 										<button onClick={(e) => { e.preventDefault(); this.handlerClose(); }} className="btn btn-secondary">Close

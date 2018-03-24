@@ -6,7 +6,7 @@ import HrElement from '../HrElement';
 import CollectionListed from './CollectionListed';
 import ModalDelete from '../ModalDelete';
 import NoData from '../NoData';
-import Spinner from '../Spinner';
+import Spinner from '../Spinner/Spinner';
 
 import untilNowApi from '../../utils/until-now-api-client';
 
@@ -72,8 +72,8 @@ class Collections extends React.Component {
 		return (
 			<section>
 				<Header
-					title={'Collections'}
-					subtitle={'View and manage all your equipment collection'}
+					title={'Categories'}
+					subtitle={'View and manage all your equipment categories'}
 				/>
 				<PanelNewCollection
 					show={this.state.showPanelForNewData}
@@ -81,7 +81,7 @@ class Collections extends React.Component {
 				/>
 				<ButtonNewElement
 					show={this.state.showButtonNewElement}
-					text={'New collection'}
+					text={'New categoy'}
 					onClick={this.handlerOnClickButtonForNewData}
 				/>
 				<HrElement />
@@ -103,7 +103,7 @@ class Collections extends React.Component {
 				{searching}
 				{noDataToShow}
 				<ModalDelete
-					textForBody={'Are you sure you want to delete this collection? All the items included in this collection will be deleted!'}
+					textForBody={'Are you sure you want to delete this category? All the equipment included in this category will be deleted!'}
 					dataForModalDelete={this.state.dataForModalDelete}
 					target={'collection'}
 				/>

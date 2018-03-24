@@ -6,7 +6,7 @@ import HrElement from '../HrElement';
 import ItemListed from './ItemListed';
 import ModalDelete from '../ModalDelete';
 import NoData from '../NoData';
-import Spinner from '../Spinner';
+import Spinner from '../Spinner/Spinner';
 
 import untilNowApi from '../../utils/until-now-api-client';
 
@@ -70,7 +70,7 @@ class Items extends React.Component {
 			<section>
 				<Header
 					title={'Equipment'}
-					subtitle={'View and manage all your technical gear of this collection'}
+					subtitle={'View and manage all the technical gear of this category'}
 				/>
 				<PanelNewItem
 					show={this.state.showPanelForNewData}

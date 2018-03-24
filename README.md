@@ -22,7 +22,7 @@ Enlaces relacionados:
 * [Until Now client API](https://github.com/didaquis/until-now-client-api) 
 * [Until Now server API](https://github.com/didaquis/until-now-server-api) 
 
-Para hacer funcionar la aplicación, debes renombrar el fichero `_env` por `.env` y configurar las variables para la correcta utilización de la API y/o el TDD. 
+Para hacer funcionar la aplicación, debes renombrar el fichero `_env` por `.env` y configurar las variables para la correcta utilización de la API y/o el TDD. Recuerda que también deberás instalar las dependencias.
 
 
 ## Documentación del proyecto 
@@ -90,10 +90,10 @@ Gestión de tareas: [Kanban](https://trello.com/b/x0Vl2LAY/until-now)
 - [x] Implementar en frontend la creación de items
 - [x] Solicitar feedback
 #### Viernes
-- [ ] Testing
-- [ ] HotFixing
-- [ ] Revisar la documentación del proyecto
-- [ ] Deploy sprint
+- [x] Testing
+- [x] HotFixing
+- [x] Revisar la documentación del proyecto
+- [x] Deploy sprint
 ------
 ### Sprint tercera semana
 #### Lunes

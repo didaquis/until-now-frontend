@@ -1,41 +1,35 @@
 html, body {
 	background-image: url(../images/mooning.png);
-	/* Background pattern from Subtle Patterns */
 	background-repeat: repeat;
 }
 
-.mb-8 {
-	margin-bottom: 115px;
+.mb-8 { margin-bottom: 115px; }
+.mt-7 { margin-top: 85px; }
+
+/* Extra large screens */
+.view {
+	max-width: 1440px;
+	margin: 0 auto;
 }
 
-.mt-7 {
-	margin-top: 85px;
+/* NavBar extra large screens rules */
+@media (min-width: 1100px) {
+	.nav-padd {
+		padding-left: 4%;
+		padding-right: 4%;
+	}
 }
 
-.loader {
-	border: 16px solid #f3f3f3;
-	border-radius: 50%;
-	border-top: 16px solid #5A6069;
-	width: 120px;
-	height: 120px;
-	-webkit-animation: spin 1.5s linear infinite;
-	/* Safari */
-	animation: spin 1.5s linear infinite;
-}
-/* Safari */
-@-webkit-keyframes spin {
-	0% {
-		-webkit-transform: rotate(0deg);
-	}
-	100% {
-		-webkit-transform: rotate(360deg);
+@media (min-width: 1300px) {
+	.nav-padd {
+		padding-left: 6%;
+		padding-right: 6%;
 	}
 }
-@keyframes spin {
-	0% {
-		transform: rotate(0deg);
-	}
-	100% {
-		transform: rotate(360deg);
+
+@media (min-width: 1680px) {
+	.nav-padd {
+		padding-left: 12%;
+		padding-right: 12%;
 	}
 }
