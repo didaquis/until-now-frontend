@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { formatDate } from '../../utils/util-functions';
+
 function ProgressBar(props) {
 	return (
 		<tr>
@@ -15,6 +17,12 @@ function ProgressBar(props) {
 					>
 					</div>
 				</div>
+				{
+					(props.dateEnd) ?
+						(<small className="form-text text-muted text-center">End Date: {formatDate(props.dateEnd)}</small>)
+						:
+						('')
+				}
 			</th>
 		</tr>
 	);

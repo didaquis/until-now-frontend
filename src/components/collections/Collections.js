@@ -6,6 +6,7 @@ import HrElement from '../HrElement';
 import CollectionListed from './CollectionListed';
 import ModalDelete from '../ModalDelete';
 import NoData from '../NoData';
+import Spinner from '../Spinner/Spinner';
 
 import untilNowApi from '../../utils/until-now-api-client';
 
@@ -14,6 +15,7 @@ class Collections extends React.Component {
 		super();
 		this.state = {
 			list: [],
+			searching: true,
 			showPanelForNewData: false,
 			showButtonNewElement: true,
 			dataForModalDelete: ''
@@ -32,7 +34,7 @@ class Collections extends React.Component {
 
 	refreshList = (results) => {
 		if (results.status === 'OK') {
-			this.setState({ list: results.data });
+			this.setState({ list: results.data, searching: false });
 		}
 	}
 
@@ -58,30 +60,53 @@ class Collections extends React.Component {
 
 	render() {
 		let noDataToShow;
-		if (this.state.list.length === 0) {
+		if (this.state.list.length === 0 && !this.state.searching) {
 			noDataToShow = <NoData />;
+		}
+
+		let searching;
+		if (this.state.searching) {
+			searching = <Spinner />;
 		}
 
 		return (
 			<section>
-				<Header title={'Collections'} subtitle={'View and manage all your equipment collection'} />
+				<Header
+					title={'Categories'}
+					subtitle={'View and manage all your equipment categories'}
+				/>
 				<PanelNewCollection
 					show={this.state.showPanelForNewData}
 					onClick={this.handlerClosePanelForNewData}
 				/>
-				<ButtonNewElement show={this.state.showButtonNewElement} text={'New collection'} onClick={this.handlerOnClickButtonForNewData} />
+				<ButtonNewElement
+					show={this.state.showButtonNewElement}
+					text={'New categoy'}
+					onClick={this.handlerOnClickButtonForNewData}
+				/>
 				<HrElement />
 				<div className="row">
 					{
 						this.state.list.map((collection) => {
 							return (
-								<CollectionListed key={collection._id} id={collection._id} title={collection.name} count={collection.itemsCount} handlerOnClickButtonForOpenModal={this.handlerOnClickButtonForOpenModal} />
+								<CollectionListed
+									key={collection._id}
+									id={collection._id}
+									title={collection.name}
+									count={collection.itemsCount}
+									handlerOnClickButtonForOpenModal={this.handlerOnClickButtonForOpenModal}
+								/>
 							);
 						})
 					}
 				</div>
+				{searching}
 				{noDataToShow}
-				<ModalDelete textForBody={'Are you sure you want to delete this collection? All the items included in this collection will be deleted!'} dataForModalDelete={this.state.dataForModalDelete} target={'collection'} />
+				<ModalDelete
+					textForBody={'Are you sure you want to delete this category? All the equipment included in this category will be deleted!'}
+					dataForModalDelete={this.state.dataForModalDelete}
+					target={'collection'}
+				/>
 			</section>
 		);
 	}

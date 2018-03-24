@@ -1,13 +1,14 @@
 import React from 'react';
+import './Spinner.css';
 
-function NoData() {
+function Spinner() {
 	return (
 		<div className="row">
 			<div className="col mt-4 mb-4">
-				<h4 className="text-center">{"You don't have data yet"}</h4>
+				<div className="mx-auto loader"></div>
 			</div>
 		</div>
 	);
 }
 
-export default NoData;
+export default Spinner;

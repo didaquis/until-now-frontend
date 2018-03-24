@@ -1,16 +1,35 @@
 html, body {
-	background-image: url(../images/mooning.png);/* Background pattern from Subtle Patterns */
+	background-image: url(../images/mooning.png);
 	background-repeat: repeat;
 }
 
-.mb-8 {
-	margin-bottom: 115px;
+.mb-8 { margin-bottom: 115px; }
+.mt-7 { margin-top: 85px; }
+
+/* Extra large screens */
+.view {
+	max-width: 1440px;
+	margin: 0 auto;
 }
 
-.mt-7 {
-	margin-top: 85px;
+/* NavBar extra large screens rules */
+@media (min-width: 1100px) {
+	.nav-padd {
+		padding-left: 4%;
+		padding-right: 4%;
+	}
 }
 
-.datepicker{
-	z-index: 1200 !important;
+@media (min-width: 1300px) {
+	.nav-padd {
+		padding-left: 6%;
+		padding-right: 6%;
+	}
+}
+
+@media (min-width: 1680px) {
+	.nav-padd {
+		padding-left: 12%;
+		padding-right: 12%;
+	}
 }

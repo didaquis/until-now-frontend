@@ -12,10 +12,9 @@ class PanelNewCollection extends React.Component {
 		};
 	}
 
-	fillInput = (input) => {
-		if (input.id === 'nameCollectionInput') {
-			this.setState({ nameCollectionInput: input.value });
-		}
+	fillInput = (e) => {
+		const prop = e.target.name;
+		this.setState({ [prop]: e.target.value });
 	}
 
 	handlerSubmit = () => {
@@ -43,28 +42,29 @@ class PanelNewCollection extends React.Component {
 						<div className="col-md-8 offset-md-2">
 							<div className="card">
 								<div className="card-body">
-									<h4 className="card-title">Add new collection</h4>
+									<h4 className="card-title">Add new category</h4>
 									<form onSubmit={(e) => { e.preventDefault(); this.handlerSubmit(); }}>
 										<div className="form-group">
 											<label htmlFor="nameCollectionInput">
-												Name of collection
+												Name of category
 											</label>
 											<input
 												type="text"
 												className="form-control"
 												id="nameCollectionInput"
+												name="nameCollectionInput"
 												aria-describedby="nameCollectionHelp"
-												placeholder="Enter name of collection"
+												placeholder="Enter name of category"
 												required
 												pattern="[A-Za-z0-9.\-_\*\/\|]{3,}"
 												autoFocus
-												onChange={e => this.fillInput(e.target)}
+												onChange={e => this.fillInput(e)}
 												value={this.state.nameCollectionInput}
 											/>
 											<small id="nameCollectionHelp" className="form-text text-muted">At least 3 chars. Spaces are not valid chars</small>
 											{
 												(this.state.nameCollectionInput === '') ?
-													(<MessageValidateForm text={'Provide name of collection'} />) : ('')
+													(<MessageValidateForm text={'Provide name of category'} />) : ('')
 											}
 										</div>
 										<button onClick={(e) => { e.preventDefault(); this.handlerClose(); }} className="btn btn-secondary">Close
