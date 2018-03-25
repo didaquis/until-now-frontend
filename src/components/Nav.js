@@ -2,6 +2,8 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import LoginButton from './login/LoginButton';
 
+import { recoverToken } from '../utils/util-functions';
+
 function Nav() {
 	return (
 		<div className="row mb-8">
@@ -19,30 +21,40 @@ function Nav() {
 					<span className="navbar-toggler-icon"></span>
 				</button>
 				<div className="collapse navbar-collapse" id="navbarCollapse">
-					<ul className="navbar-nav mr-auto">
-						<li className="nav-item">
-							<NavLink
-								exact
-								to="/categories"
-								activeClassName="active"
-								className="nav-link"
-								replace
-							>
-								Categories
-							</NavLink>
-						</li>
-						<li className="nav-item">
-							<NavLink
-								exact
-								to="/summary"
-								activeClassName="active"
-								className="nav-link"
-								replace
-							>
-								Equipment summary
-							</NavLink>
-						</li>
-					</ul>
+
+					{
+						(recoverToken()) ?
+							(
+								<ul className="navbar-nav mr-auto">
+									<li className="nav-item">
+										<NavLink
+											exact
+											to="/categories"
+											activeClassName="active"
+											className="nav-link"
+											replace
+										>
+											Categories
+										</NavLink>
+									</li>
+									<li className="nav-item">
+										<NavLink
+											exact
+											to="/summary"
+											activeClassName="active"
+											className="nav-link"
+											replace
+										>
+											Equipment summary
+										</NavLink>
+									</li>
+								</ul>
+							)
+							:
+							(
+								<ul className="navbar-nav mr-auto"></ul>
+							)
+					}
 					<LoginButton />
 				</div>
 			</nav>
