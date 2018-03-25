@@ -20,7 +20,7 @@ class LoginButton extends React.Component {
 			return (
 				<div className="form-inline mt-2 mt-md-0">
 					<button
-						className="btn btn-light my-2 my-sm-0"
+						className="btn btn-light btn-sm my-2 my-sm-0"
 						onClick={(e) => { e.preventDefault(); this.handlerLogout(); }}
 					>
 						Logout
@@ -33,7 +33,7 @@ class LoginButton extends React.Component {
 				<NavLink
 					exact
 					to="/login"
-					className="btn btn-light my-2 my-sm-0"
+					className="btn btn-light btn-sm my-2 my-sm-0"
 					replace
 				>
 					Login
