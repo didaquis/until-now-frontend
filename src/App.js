@@ -3,6 +3,7 @@ import { Switch, Route, HashRouter } from 'react-router-dom';
 
 import Nav from './components/Nav';
 import Home from './components/home/Home';
+import LoginForm from './components/login/LoginForm';
 import Collections from './components/collections/Collections';
 import Items from './components/items/Items';
 import ItemsSummary from './components/items/ItemsSummary';
@@ -17,6 +18,7 @@ const App = () => {
 				<Nav />
 				<Switch>
 					<Route exact path="/" component={Home} />
+					<Route exact path="/login" component={LoginForm} />
 					<Route exact path="/categories" component={Collections} />
 					<Route exact path="/summary" component={ItemsSummary} />
 					<Route path="/category/:idOfCollection" component={Items} />
