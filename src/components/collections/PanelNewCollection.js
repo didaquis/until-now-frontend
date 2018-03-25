@@ -2,7 +2,7 @@ import React from 'react';
 
 import MessageValidateForm from '../MessageValidateForm';
 
-import { recoverToken } from '../../utils/util-functions';
+import { recoverToken, recoverUserId } from '../../utils/util-functions';
 
 import untilNowApi from '../../utils/until-now-api-client';
 
@@ -20,7 +20,7 @@ class PanelNewCollection extends React.Component {
 	}
 
 	handlerSubmit = () => {
-		untilNowApi.createCollection(this.state.nameCollectionInput, '5aa6bb9e341a690ff909faee', recoverToken())
+		untilNowApi.createCollection(this.state.nameCollectionInput, recoverUserId(), recoverToken())
 			.then(res => {
 				if (res.status === 'OK') {
 					window.location.reload();

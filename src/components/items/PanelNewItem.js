@@ -3,7 +3,7 @@ import React from 'react';
 import DateSelector from './DateSelector';
 import MessageValidateForm from '../MessageValidateForm';
 
-import { recoverToken } from '../../utils/util-functions';
+import { recoverToken, recoverUserId } from '../../utils/util-functions';
 
 import untilNowApi from '../../utils/until-now-api-client';
 
@@ -35,7 +35,7 @@ class PanelNewItem extends React.Component {
 			&& (new Date(this.state.inputStart) < new Date(this.state.inputEnd))
 		) {
 			// Dates pass the validations...
-			untilNowApi.createItem(this.state.inputName, this.state.inputStart, this.state.inputEnd, this.state.inputReference, this.state.inputNotes, this.state.idOfCollection, recoverToken())
+			untilNowApi.createItem(this.state.inputName, this.state.inputStart, this.state.inputEnd, this.state.inputReference, this.state.inputNotes, this.state.idOfCollection, recoverUserId(), recoverToken())
 				.then(res => {
 					if (res.status === 'OK') {
 						window.location.reload();
