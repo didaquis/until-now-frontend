@@ -8,6 +8,8 @@ import ModalDelete from '../ModalDelete';
 import NoData from '../NoData';
 import Spinner from '../Spinner/Spinner';
 
+import { recoverToken } from '../../utils/util-functions';
+
 import untilNowApi from '../../utils/until-now-api-client';
 
 class Collections extends React.Component {
@@ -23,9 +25,11 @@ class Collections extends React.Component {
 	}
 
 	componentDidMount() {
-		untilNowApi.listCollections()
+		untilNowApi.listCollections(recoverToken())
 			.then(res => this.refreshList(res))
-			.catch(error => console.error(error));
+			.catch(() => {
+				this.props.history.push('/login');
+			});
 	}
 
 	componentWillReceiveProps() {
