@@ -6,7 +6,7 @@ function Nav() {
 	return (
 		<div className="row mb-8">
 			<nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark nav-padd">
-				<a className="navbar-brand" href="/">Until Now</a>
+				<NavLink className="navbar-brand" exact to="/" replace>Until Now</NavLink>
 				<button
 					className="navbar-toggler"
 					type="button"
