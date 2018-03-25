@@ -16,7 +16,7 @@ class LoginForm extends React.Component {
 
 	componentWillMount() {
 		if (recoverToken()) {
-			this.props.history.push('/categories');
+			this.props.history.push('/collections');
 		}
 	}
 
@@ -30,7 +30,7 @@ class LoginForm extends React.Component {
 			.then(res => {
 				if (res.status === 'OK') {
 					saveSessionSTO('userData', res.data);
-					this.props.history.push('/categories');
+					this.props.history.push('/collections');
 				} else {
 					console.log(res);
 					deleteSessionSTO();

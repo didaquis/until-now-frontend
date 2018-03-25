@@ -20,7 +20,7 @@ class Home extends React.Component {
 					reverse
 					title={'All your equipment well classified.'}
 					subtitle={'Organize your gear easily.'}
-					text={'Create collections and distribute your materials according to their category. Categories are sorted alphabetically so you can fast and efficiently find what you are looking for'}
+					text={'Create collections and distribute your materials according to their category. Collections are sorted alphabetically so you can fast and efficiently find what you are looking for'}
 					img={require('../../images/features_1.png')}
 				/>
 				<Features

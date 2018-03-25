@@ -48,7 +48,7 @@ class ItemsSummary extends React.Component {
 			<section>
 				<Header
 					title={'Equipment summary'}
-					subtitle={'A quick preview of all your equipment ordered by limit date'}
+					subtitle={'A quick preview of all your equipment classified by their limit date'}
 				/>
 				<HrElement />
 				<div className="row">

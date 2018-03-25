@@ -11,6 +11,8 @@ Previsualización vista rápida de items.
 ![Visualización detalle de los items](documentation/preview_2.png)  
 Visualización en detalle de los items.  
 
+Demo => [until-now](https://until-now.surge.sh)  
+
 ## Sprint Planning
 Gestión de tareas: [Kanban](https://trello.com/b/x0Vl2LAY/until-now) 
 
@@ -106,7 +108,7 @@ Arquitectura del proyecto:
 - [ ] API client: sistema de login
 - [ ] TDD sistema de login
 #### Miércoles
-- [ ] Implementar sistema de login y logout en frontend
+- [x] Implementar sistema de login y logout en frontend
 - [ ] Testing
 - [ ] HotFixing
 - [ ] Revisar la documentación del proyecto
