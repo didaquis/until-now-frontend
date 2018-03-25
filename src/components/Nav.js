@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import LoginButton from './login/LoginButton';
 
 
 function Nav() {
@@ -43,9 +44,7 @@ function Nav() {
 							</NavLink>
 						</li>
 					</ul>
-					{/* <form className="form-inline mt-2 mt-md-0">
-						<button className="btn btn-light my-2 my-sm-0" type="submit">Logout</button>
-					</form> */}
+					<LoginButton />
 				</div>
 			</nav>
 		</div>

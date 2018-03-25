@@ -109,6 +109,17 @@ function deleteSessionSTO() {
 	sessionStorage.clear();
 }
 
+/**
+ * Recover userData.token from Session Storage
+ * @returns {string}
+ */
+function recoverToken() {
+	const userData = recoverSessionSTO('userData');
+	if (userData) {
+		return userData.token;
+	}
+	return undefined;
+}
 
 module.exports = {
 	formatDate,
@@ -117,5 +128,6 @@ module.exports = {
 	calculateColorOfProgressBar,
 	saveSessionSTO,
 	recoverSessionSTO,
-	deleteSessionSTO
+	deleteSessionSTO,
+	recoverToken
 };
