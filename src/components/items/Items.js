@@ -8,6 +8,8 @@ import ModalDelete from '../ModalDelete';
 import NoData from '../NoData';
 import Spinner from '../Spinner/Spinner';
 
+import { recoverToken } from '../../utils/util-functions';
+
 import untilNowApi from '../../utils/until-now-api-client';
 
 
@@ -24,9 +26,11 @@ class Items extends React.Component {
 	}
 
 	componentDidMount() {
-		untilNowApi.listItemsInCollection(this.props.match.params.idOfCollection)
+		untilNowApi.listItemsInCollection(this.props.match.params.idOfCollection, recoverToken())
 			.then(res => this.refreshList(res))
-			.catch(error => console.error(error));
+			.catch(() => {
+				this.props.history.push('/login');
+			});
 	}
 
 	refreshList = (results) => {
@@ -70,7 +74,7 @@ class Items extends React.Component {
 			<section>
 				<Header
 					title={'Equipment'}
-					subtitle={'View and manage all the technical gear of this category'}
+					subtitle={'View and manage all the technical gear of this collection'}
 				/>
 				<PanelNewItem
 					show={this.state.showPanelForNewData}

@@ -5,6 +5,8 @@ import ItemListedSummary from './ItemListedSummary';
 import NoData from '../NoData';
 import Spinner from '../Spinner/Spinner';
 
+import { recoverToken } from '../../utils/util-functions';
+
 import untilNowApi from '../../utils/until-now-api-client';
 
 
@@ -18,9 +20,11 @@ class ItemsSummary extends React.Component {
 	}
 
 	componentDidMount() {
-		untilNowApi.listItems()
+		untilNowApi.listItems(recoverToken())
 			.then(res => this.refreshList(res))
-			.catch(error => console.error(error));
+			.catch(() => {
+				this.props.history.push('/login');
+			});
 	}
 
 	refreshList = (results) => {
@@ -44,7 +48,7 @@ class ItemsSummary extends React.Component {
 			<section>
 				<Header
 					title={'Equipment summary'}
-					subtitle={'A quick preview of all your equipment ordered by limit date'}
+					subtitle={'A quick preview of all your equipment classified by their limit date'}
 				/>
 				<HrElement />
 				<div className="row">

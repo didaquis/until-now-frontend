@@ -1,13 +1,25 @@
-# Until Now 
+# Until Now ⌛️
 En algunas actividades, como en el submarinismo o la escalada, se utilza material técnico especializado y diseñado únicamente para tal fin. Los fabricantes de dicho material establecen una duración máxima de uso para estos productos. Exceder la vida útil de los elementos usados en actividades de riesgo puede tener consecuencias letales.
 
-Until Now te ayuda a gestionar la fecha de renovación del material técnico. La aplicación te permite visualizar rápidamente que material debes descartar y/o renovar próximamente.
+Until Now te ayuda a gestionar la fecha de renovación del material técnico. La aplicación te permite visualizar rápidamente que material debes descartar y/o renovar próximamente.  
 
+
+![Previsualización vista rápida de items](documentation/preview_1.png) 
+Previsualización vista rápida de items.  
+  
+
+![Visualización detalle de los items](documentation/preview_2.png)  
+Visualización en detalle de los items.  
+
+Demo => [until-now](https://until-now.surge.sh)  
+
+## Sprint Planning
+Gestión de tareas: [Kanban](https://trello.com/b/x0Vl2LAY/until-now) 
 
 ## Until Now (frontend) 
 Este repositorio contiene el frontend del proyecto.  
 
-Recursos utilizados:
+Recursos utilizados en frontend:
 * [React](https://github.com/facebook/create-react-app) 
 * [Bootstrap 4](https://getbootstrap.com) 
 * [Shards](https://designrevision.com/downloads/shards/) 
@@ -32,14 +44,7 @@ Estructura de la base de datos:
 
 Arquitectura del proyecto:  
 
-![Arquitectura](documentation/main.png)  
-
-Puedes ver los mockups iniciales en:  
-[Mockup lista colecciones](documentation/mockup_1.png)  
-[Mockup lista items](documentation/mockup_2.png)  
-
-## Sprint Planning
-Gestión de tareas: [Kanban](https://trello.com/b/x0Vl2LAY/until-now)  
+![Arquitectura](documentation/main.png)   
 
 ------ 
 
@@ -103,7 +108,7 @@ Gestión de tareas: [Kanban](https://trello.com/b/x0Vl2LAY/until-now)
 - [ ] API client: sistema de login
 - [ ] TDD sistema de login
 #### Miércoles
-- [ ] Implementar sistema de login y logout en frontend
+- [x] Implementar sistema de login y logout en frontend
 - [ ] Testing
 - [ ] HotFixing
 - [ ] Revisar la documentación del proyecto

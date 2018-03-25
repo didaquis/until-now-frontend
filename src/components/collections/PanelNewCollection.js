@@ -2,6 +2,8 @@ import React from 'react';
 
 import MessageValidateForm from '../MessageValidateForm';
 
+import { recoverToken } from '../../utils/util-functions';
+
 import untilNowApi from '../../utils/until-now-api-client';
 
 class PanelNewCollection extends React.Component {
@@ -18,7 +20,7 @@ class PanelNewCollection extends React.Component {
 	}
 
 	handlerSubmit = () => {
-		untilNowApi.createCollection(this.state.nameCollectionInput, '5aa6bb9e341a690ff909faee')
+		untilNowApi.createCollection(this.state.nameCollectionInput, '5aa6bb9e341a690ff909faee', recoverToken())
 			.then(res => {
 				if (res.status === 'OK') {
 					window.location.reload();
@@ -26,7 +28,9 @@ class PanelNewCollection extends React.Component {
 					console.log(res);
 				}
 			})
-			.catch(err => console.log(err));
+			.catch(() => {
+				this.props.history.push('/login');
+			});
 	}
 
 	handlerClose = () => {
@@ -42,11 +46,11 @@ class PanelNewCollection extends React.Component {
 						<div className="col-md-8 offset-md-2">
 							<div className="card">
 								<div className="card-body">
-									<h4 className="card-title">Add new category</h4>
+									<h4 className="card-title">Add new collection</h4>
 									<form onSubmit={(e) => { e.preventDefault(); this.handlerSubmit(); }}>
 										<div className="form-group">
 											<label htmlFor="nameCollectionInput">
-												Name of category
+												Name of collection
 											</label>
 											<input
 												type="text"
@@ -54,7 +58,7 @@ class PanelNewCollection extends React.Component {
 												id="nameCollectionInput"
 												name="nameCollectionInput"
 												aria-describedby="nameCollectionHelp"
-												placeholder="Enter name of category"
+												placeholder="Enter name of collection"
 												required
 												pattern="[A-Za-z0-9.\-_\*\/\|]{3,}"
 												autoFocus
@@ -64,7 +68,7 @@ class PanelNewCollection extends React.Component {
 											<small id="nameCollectionHelp" className="form-text text-muted">At least 3 chars. Spaces are not valid chars</small>
 											{
 												(this.state.nameCollectionInput === '') ?
-													(<MessageValidateForm text={'Provide name of category'} />) : ('')
+													(<MessageValidateForm text={'Provide name of collection'} />) : ('')
 											}
 										</div>
 										<button onClick={(e) => { e.preventDefault(); this.handlerClose(); }} className="btn btn-secondary">Close
