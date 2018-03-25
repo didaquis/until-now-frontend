@@ -1,8 +1,7 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom';
 import MessageValidateForm from '../MessageValidateForm';
 
-import { saveSessionSTO, deleteSessionSTO } from '../../utils/util-functions';
+import { saveSessionSTO, deleteSessionSTO, recoverToken } from '../../utils/util-functions';
 
 import untilNowApi from '../../utils/until-now-api-client';
 
@@ -11,9 +10,14 @@ class LoginForm extends React.Component {
 		super();
 		this.state = {
 			usernameInput: '',
-			passwordInput: '',
-			redirect: false
+			passwordInput: ''
 		};
+	}
+
+	componentWillMount() {
+		if (recoverToken()) {
+			this.props.history.push('/categories');
+		}
 	}
 
 	fillInput = (e) => {
@@ -26,7 +30,7 @@ class LoginForm extends React.Component {
 			.then(res => {
 				if (res.status === 'OK') {
 					saveSessionSTO('userData', res.data);
-					this.setState({ redirect: true });
+					this.props.history.push('/categories');
 				} else {
 					console.log(res);
 					deleteSessionSTO();
@@ -39,10 +43,6 @@ class LoginForm extends React.Component {
 	}
 
 	render() {
-		if (this.state.redirect) {
-			return <Redirect to="/categories" push />;
-		}
-
 		return (
 			<section>
 				<div className="row">

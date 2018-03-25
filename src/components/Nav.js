@@ -2,7 +2,6 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import LoginButton from './login/LoginButton';
 
-
 function Nav() {
 	return (
 		<div className="row mb-8">

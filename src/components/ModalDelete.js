@@ -1,6 +1,8 @@
 import React from 'react';
 import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
+import { recoverToken } from '../utils/util-functions';
+
 import untilNowApi from '../utils/until-now-api-client';
 
 class ModalDelete extends React.Component {
@@ -31,7 +33,7 @@ class ModalDelete extends React.Component {
 
 	handlerSubmit = () => {
 		if (this.state.target === 'collection') {
-			untilNowApi.deleteCollection(this.state.dataForModalDelete)
+			untilNowApi.deleteCollection(this.state.dataForModalDelete, recoverToken())
 				.then(res => {
 					if (res.status === 'OK') {
 						window.location.reload();
@@ -39,10 +41,12 @@ class ModalDelete extends React.Component {
 						console.log(res);
 					}
 				})
-				.catch(err => console.error(err));
+				.catch(() => {
+					this.props.history.push('/login');
+				});
 		}
 		if (this.state.target === 'item') {
-			untilNowApi.deleteItem(this.state.dataForModalDelete)
+			untilNowApi.deleteItem(this.state.dataForModalDelete, recoverToken())
 				.then(res => {
 					if (res.status === 'OK') {
 						window.location.reload();
@@ -50,7 +54,9 @@ class ModalDelete extends React.Component {
 						console.log(res);
 					}
 				})
-				.catch(err => console.error(err));
+				.catch(() => {
+					this.props.history.push('/login');
+				});
 		}
 	}
 
