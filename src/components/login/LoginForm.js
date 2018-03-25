@@ -70,7 +70,7 @@ class LoginForm extends React.Component {
 										/>
 										<small id="usernameHelp" className="form-text text-muted">At least 3 chars. Spaces are not valid chars</small>
 										{
-											(this.state.usernameInput === '') ?
+											(this.state.usernameInput.length < 3) ?
 												(<MessageValidateForm text={'Provide username'} />) : ('')
 										}
 									</div>
@@ -92,7 +92,7 @@ class LoginForm extends React.Component {
 										/>
 										<small id="passwordHelp" className="form-text text-muted">At least 8 chars. Must contain numbers, lowercase chars and uppercase chars</small>
 										{
-											(this.state.passwordInput === '') ?
+											(this.state.passwordInput.length < 8) ?
 												(<MessageValidateForm text={'Provide password'} />) : ('')
 										}
 									</div>
