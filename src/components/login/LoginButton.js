@@ -12,7 +12,11 @@ class LoginButton extends React.Component {
 
 	handlerLogout = () => {
 		deleteSessionSTO();
-		this.props.history.push('/');
+		if (this.props.history.location.pathname !== '/') {
+			this.props.history.push('/');
+		} else {
+			window.location.reload();
+		}
 	}
 
 	render() {
