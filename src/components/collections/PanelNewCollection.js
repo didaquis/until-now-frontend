@@ -46,7 +46,7 @@ class PanelNewCollection extends React.Component {
 						<div className="col-md-8 offset-md-2">
 							<div className="card">
 								<div className="card-body">
-									<h4 className="card-title">Add new collection</h4>
+									<h4 className="card-title">Add a new collection</h4>
 									<form onSubmit={(e) => { e.preventDefault(); this.handlerSubmit(); }}>
 										<div className="form-group">
 											<label htmlFor="nameCollectionInput">
