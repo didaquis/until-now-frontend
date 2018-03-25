@@ -85,6 +85,37 @@ function calculateColorOfProgressBar(int) {
 	return 'success';
 }
 
+/**
+ * Save data in Session Storage
+ * @param {string} name - key for data
+ * @param {string|number|Array} data - data for storage
+ */
+function saveSessionSTO(name, data) {
+	sessionStorage.setItem(name, JSON.stringify(data));
+}
+
+/**
+ * Recover data from Session Storage
+ * @param {string} name - key for data to recover
+ */
+function recoverSessionSTO(name) {
+	return JSON.parse(sessionStorage.getItem(name));
+}
+
+/**
+ * Delete all data in Session Storage
+ */
+function deleteSessionSTO() {
+	sessionStorage.clear();
+}
+
+
 module.exports = {
-	formatDate, today, calculateNumberForProgress, calculateColorOfProgressBar
+	formatDate,
+	today,
+	calculateNumberForProgress,
+	calculateColorOfProgressBar,
+	saveSessionSTO,
+	recoverSessionSTO,
+	deleteSessionSTO
 };
