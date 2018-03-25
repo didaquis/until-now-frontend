@@ -121,6 +121,18 @@ function recoverToken() {
 	return undefined;
 }
 
+/**
+ * Recover userData.id from Session Storage
+ * @returns {string}
+ */
+function recoverUserId() {
+	const userData = recoverSessionSTO('userData');
+	if (userData) {
+		return userData.id;
+	}
+	return undefined;
+}
+
 module.exports = {
 	formatDate,
 	today,
@@ -129,5 +141,6 @@ module.exports = {
 	saveSessionSTO,
 	recoverSessionSTO,
 	deleteSessionSTO,
-	recoverToken
+	recoverToken,
+	recoverUserId
 };
