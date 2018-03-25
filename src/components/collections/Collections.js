@@ -8,7 +8,7 @@ import ModalDelete from '../ModalDelete';
 import NoData from '../NoData';
 import Spinner from '../Spinner/Spinner';
 
-import { recoverToken } from '../../utils/util-functions';
+import { recoverToken, recoverUserId } from '../../utils/util-functions';
 
 import untilNowApi from '../../utils/until-now-api-client';
 
@@ -25,7 +25,7 @@ class Collections extends React.Component {
 	}
 
 	componentDidMount() {
-		untilNowApi.listCollections(recoverToken())
+		untilNowApi.listCollections(recoverUserId(), recoverToken())
 			.then(res => this.refreshList(res))
 			.catch(() => {
 				this.props.history.push('/login');
