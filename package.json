@@ -1,6 +1,6 @@
 {
   "name": "until-now-frontend",
-  "version": "0.3.3",
+  "version": "0.4.0",
   "private": true,
   "dependencies": {
     "moment": "^2.21.0",
@@ -12,7 +12,7 @@
     "react-widgets": "^4.2.2",
     "react-widgets-moment": "^4.0.9",
     "reactstrap": "^5.0.0",
-    "until-now-client-api": "^0.3.3"
+    "until-now-client-api": "^0.3.8"
   },
   "scripts": {
     "start": "react-scripts start",
