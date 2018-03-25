@@ -25,7 +25,7 @@ class Collections extends React.Component {
 	}
 
 	componentDidMount() {
-		untilNowApi.listCollectionsFromUser(recoverUserId(), recoverToken())
+		untilNowApi.listCollections(recoverUserId(), recoverToken())
 			.then(res => this.refreshList(res))
 			.catch(() => {
 				this.props.history.push('/login');
