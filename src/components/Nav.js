@@ -29,12 +29,12 @@ function Nav() {
 									<li className="nav-item">
 										<NavLink
 											exact
-											to="/categories"
+											to="/collections"
 											activeClassName="active"
 											className="nav-link"
 											replace
 										>
-											Categories
+											Collections
 										</NavLink>
 									</li>
 									<li className="nav-item">

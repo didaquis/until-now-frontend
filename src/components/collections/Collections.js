@@ -76,8 +76,8 @@ class Collections extends React.Component {
 		return (
 			<section>
 				<Header
-					title={'Categories'}
-					subtitle={'View and manage all your equipment categories'}
+					title={'Collections'}
+					subtitle={'View and manage all your equipment collections'}
 				/>
 				<PanelNewCollection
 					show={this.state.showPanelForNewData}
@@ -85,7 +85,7 @@ class Collections extends React.Component {
 				/>
 				<ButtonNewElement
 					show={this.state.showButtonNewElement}
-					text={'New categoy'}
+					text={'New collection'}
 					onClick={this.handlerOnClickButtonForNewData}
 				/>
 				<HrElement />
@@ -107,7 +107,7 @@ class Collections extends React.Component {
 				{searching}
 				{noDataToShow}
 				<ModalDelete
-					textForBody={'Are you sure you want to delete this category? All the equipment included in this category will be deleted!'}
+					textForBody={'Are you sure you want to delete this collection? All the equipment included in this collection will be deleted!'}
 					dataForModalDelete={this.state.dataForModalDelete}
 					target={'collection'}
 				/>

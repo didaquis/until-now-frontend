@@ -19,9 +19,9 @@ const App = () => {
 				<Switch>
 					<Route exact path="/" component={Home} />
 					<Route exact path="/login" component={LoginForm} />
-					<Route exact path="/categories" component={Collections} />
+					<Route exact path="/collections" component={Collections} />
 					<Route exact path="/summary" component={ItemsSummary} />
-					<Route path="/category/:idOfCollection" component={Items} />
+					<Route path="/collection/:idOfCollection" component={Items} />
 					<Route component={Error404} />
 				</Switch>
 				<Footer />
