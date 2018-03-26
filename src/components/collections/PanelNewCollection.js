@@ -67,7 +67,7 @@ class PanelNewCollection extends React.Component {
 											/>
 											<small id="nameCollectionHelp" className="form-text text-muted">At least 3 chars. Spaces are not valid chars</small>
 											{
-												(this.state.nameCollectionInput === '') ?
+												(this.state.nameCollectionInput.length < 3) ?
 													(<MessageValidateForm text={'Provide name of collection'} />) : ('')
 											}
 										</div>
