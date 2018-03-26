@@ -1,7 +1,7 @@
 import React from 'react';
 import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
-import { recoverToken } from '../utils/util-functions';
+import { recoverToken, deleteSessionSTO } from '../utils/util-functions';
 
 import untilNowApi from '../utils/until-now-api-client';
 
@@ -42,6 +42,7 @@ class ModalDelete extends React.Component {
 					}
 				})
 				.catch(() => {
+					deleteSessionSTO();
 					this.props.history.push('/login');
 				});
 		}
@@ -55,6 +56,7 @@ class ModalDelete extends React.Component {
 					}
 				})
 				.catch(() => {
+					deleteSessionSTO();
 					this.props.history.push('/login');
 				});
 		}

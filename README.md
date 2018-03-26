@@ -11,15 +11,18 @@ Previsualización vista rápida de items.
 ![Visualización detalle de los items](documentation/preview_2.png)  
 Visualización en detalle de los items.  
 
-Demo => [until-now](https://until-now.surge.sh)  
+## Demo 
+Puedes ver una demo del proyecto en **https://until-now.surge.sh**  
 
-## Sprint Planning
-Gestión de tareas: [Kanban](https://trello.com/b/x0Vl2LAY/until-now) 
+* usuario: demo
+* password: ABCabc1234
+
+
 
 ## Until Now (frontend) 
 Este repositorio contiene el frontend del proyecto.  
 
-Recursos utilizados en frontend:
+Principales recursos utilizados en frontend:
 * [React](https://github.com/facebook/create-react-app) 
 * [Bootstrap 4](https://getbootstrap.com) 
 * [Shards](https://designrevision.com/downloads/shards/) 
@@ -34,7 +37,7 @@ Enlaces relacionados:
 * [Until Now client API](https://github.com/didaquis/until-now-client-api) 
 * [Until Now server API](https://github.com/didaquis/until-now-server-api) 
 
-Para hacer funcionar la aplicación, debes renombrar el fichero `_env` por `.env` y configurar las variables para la correcta utilización de la API y/o el TDD. Recuerda que también deberás instalar las dependencias.
+Para hacer funcionar la aplicación, debes renombrar el fichero `_env` por `.env` y configurar las variables para la correcta utilización de la API y/o el TDD. Recuerda que también deberás instalar las dependencias. El frontend utiliza la API client para comunicarse con API server. API server se encarga de gestionar la comunicación con la base de datos.
 
 
 ## Documentación del proyecto 
@@ -47,6 +50,17 @@ Arquitectura del proyecto:
 ![Arquitectura](documentation/main.png)   
 
 ------ 
+
+## Futuro del proyecto  
+Este proyecto ha sido realizado en 14 días, por lo que se han quedado fuera muchas ideas interesantes. Estas son algunas de ellas: 
+* Envío de alertas por email al finalizar la vida útil de los productos 
+* Posibilidad de mostrar avisos o envío de alertas cuando el fabricante de un producto lanza una campaña de "recall" de material del cual eres poseedor 
+* Al introducir material, la aplicación te sugiere la durabilidad máxima basada en los datos proporcionados por el fabricante 
+
+------
+
+## Sprint Planning
+Gestión de tareas: [Kanban](https://trello.com/b/x0Vl2LAY/until-now) 
 
 ### Sprint primera semana
 #### Lunes
@@ -104,23 +118,15 @@ Arquitectura del proyecto:
 #### Lunes
 - [x] Implementar el datepicker en frontend
 #### Martes
-- [ ] API server: sistema de login
-- [ ] API client: sistema de login
-- [ ] TDD sistema de login
+- [x] API server: sistema de login
+- [x] API client: sistema de login
+- [x] TDD sistema de login
 #### Miércoles
 - [x] Implementar sistema de login y logout en frontend
 - [ ] Testing
 - [ ] HotFixing
 - [ ] Revisar la documentación del proyecto
-#### Jueves
 - [ ] Deploy sprint
-- [ ] Preparar la presentación del proyecto
-#### Viernes
-- [ ] Presentación del proyecto
-------  
-
-## Futuro del proyecto  
-Este proyecto ha sido realizado en 15 días, por lo que se han quedado fuera muchas ideas interesantes. Estas son algunas de ellas: 
-* Envío de alertas por email al finalizar la vida útil de los productos 
-* Posibilidad de mostrar avisos o envío de alertas cuando el fabricante de un producto lanza una campaña de "recall" de material del cual eres poseedor 
-* Al introducir material, la aplicación te sugiere la durabilidad máxima basada en los datos proporcionados por el fabricante 
+#### Jueves
+- [ ] Presentación del proyecto 🚀 🎉 
+  

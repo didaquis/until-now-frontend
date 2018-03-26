@@ -2,7 +2,7 @@ import React from 'react';
 
 import MessageValidateForm from '../MessageValidateForm';
 
-import { recoverToken, recoverUserId } from '../../utils/util-functions';
+import { recoverToken, recoverUserId, deleteSessionSTO } from '../../utils/util-functions';
 
 import untilNowApi from '../../utils/until-now-api-client';
 
@@ -29,6 +29,7 @@ class PanelNewCollection extends React.Component {
 				}
 			})
 			.catch(() => {
+				deleteSessionSTO();
 				this.props.history.push('/login');
 			});
 	}
@@ -67,7 +68,7 @@ class PanelNewCollection extends React.Component {
 											/>
 											<small id="nameCollectionHelp" className="form-text text-muted">At least 3 chars. Spaces are not valid chars</small>
 											{
-												(this.state.nameCollectionInput === '') ?
+												(this.state.nameCollectionInput.length < 3) ?
 													(<MessageValidateForm text={'Provide name of collection'} />) : ('')
 											}
 										</div>

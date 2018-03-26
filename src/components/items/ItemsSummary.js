@@ -5,7 +5,7 @@ import ItemListedSummary from './ItemListedSummary';
 import NoData from '../NoData';
 import Spinner from '../Spinner/Spinner';
 
-import { recoverToken, recoverUserId } from '../../utils/util-functions';
+import { recoverToken, recoverUserId, deleteSessionSTO } from '../../utils/util-functions';
 
 import untilNowApi from '../../utils/until-now-api-client';
 
@@ -23,6 +23,7 @@ class ItemsSummary extends React.Component {
 		untilNowApi.listItems(recoverUserId(), recoverToken())
 			.then(res => this.refreshList(res))
 			.catch(() => {
+				deleteSessionSTO();
 				this.props.history.push('/login');
 			});
 	}
