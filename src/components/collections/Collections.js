@@ -108,10 +108,12 @@ class Collections extends React.Component {
 				{searching}
 				{noDataToShow}
 				<ModalDelete
-					textForBody={'Are you sure you want to delete this collection? All the equipment included in this collection will be deleted!'}
 					dataForModalDelete={this.state.dataForModalDelete}
 					target={'collection'}
-				/>
+				>
+					<p>Are you sure you want to delete this collection?</p>
+					<p>All the equipment included in this collection will be deleted!</p>
+				</ModalDelete>
 			</section>
 		);
 	}

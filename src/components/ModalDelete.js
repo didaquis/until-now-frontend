@@ -68,7 +68,7 @@ class ModalDelete extends React.Component {
 				<Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
 					<ModalHeader toggle={this.toggle}>Delete</ModalHeader>
 					<ModalBody>
-						<p>{this.props.textForBody}</p>
+						{this.props.children}
 					</ModalBody>
 					<ModalFooter>
 						<button type="button" className="btn btn-secondary mr-auto" onClick={this.toggle}>Close</button>

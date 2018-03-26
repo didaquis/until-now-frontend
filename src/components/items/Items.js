@@ -105,10 +105,11 @@ class Items extends React.Component {
 				{searching}
 				{noDataToShow}
 				<ModalDelete
-					textForBody={'Are you sure you want to delete this equipment?'}
 					dataForModalDelete={this.state.dataForModalDelete}
 					target={'item'}
-				/>
+				>
+					<p>Are you sure you want to delete this equipment?</p>
+				</ModalDelete>
 			</section>
 		);
 	}
