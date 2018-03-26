@@ -37,8 +37,7 @@ class LoginForm extends React.Component {
 				}
 				return null;
 			})
-			.catch(err => {
-				console.log(err);
+			.catch(() => {
 				deleteSessionSTO();
 			});
 	}
