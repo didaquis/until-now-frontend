@@ -8,7 +8,7 @@ import ModalDelete from '../ModalDelete';
 import NoData from '../NoData';
 import Spinner from '../Spinner/Spinner';
 
-import { recoverToken, recoverUserId, deleteSessionSTO } from '../../utils/util-functions';
+import { recoverToken, recoverUserId, deleteSessionSTO, today } from '../../utils/util-functions';
 
 import untilNowApi from '../../utils/until-now-api-client';
 
@@ -97,6 +97,7 @@ class Items extends React.Component {
 									notes={item.notes}
 									reference={item.refNumber}
 									title={item.name}
+									today={today()}
 								/>
 							);
 						})

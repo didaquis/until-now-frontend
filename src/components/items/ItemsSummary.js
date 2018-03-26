@@ -5,7 +5,7 @@ import ItemListedSummary from './ItemListedSummary';
 import NoData from '../NoData';
 import Spinner from '../Spinner/Spinner';
 
-import { recoverToken, recoverUserId, deleteSessionSTO } from '../../utils/util-functions';
+import { recoverToken, recoverUserId, deleteSessionSTO, today } from '../../utils/util-functions';
 
 import untilNowApi from '../../utils/until-now-api-client';
 
@@ -61,6 +61,7 @@ class ItemsSummary extends React.Component {
 									dateStart={item.dateStart}
 									key={item._id}
 									title={item.name}
+									today={today()}
 								/>
 							);
 						})
