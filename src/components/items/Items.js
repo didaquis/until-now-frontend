@@ -26,7 +26,7 @@ class Items extends React.Component {
 	}
 
 	componentDidMount() {
-		untilNowApi.listItemsInCollection(this.props.match.params.idOfCollection,recoverUserId() , recoverToken())
+		untilNowApi.listItemsInCollection(this.props.match.params.idOfCollection, recoverUserId(), recoverToken())
 			.then(res => this.refreshList(res))
 			.catch(() => {
 				deleteSessionSTO();
