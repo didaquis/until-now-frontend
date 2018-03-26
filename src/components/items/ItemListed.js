@@ -1,11 +1,11 @@
 import React from 'react';
-import { formatDate, calculateNumberForProgress, calculateColorOfProgressBar, today } from '../../utils/util-functions';
+import { formatDate, calculateNumberForProgress, calculateColorOfProgressBar } from '../../utils/util-functions';
 
 import ProgressBar from './ProgressBar';
 
 
 function ItemListed(props) {
-	const progressNumber = calculateNumberForProgress(formatDate(props.dateStart), today(), formatDate(props.dateEnd));
+	const progressNumber = calculateNumberForProgress(formatDate(props.dateStart), props.today, formatDate(props.dateEnd));
 	const colorOfProgressBar = calculateColorOfProgressBar(progressNumber);
 
 	return (

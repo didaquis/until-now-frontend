@@ -8,7 +8,7 @@ import ModalDelete from '../ModalDelete';
 import NoData from '../NoData';
 import Spinner from '../Spinner/Spinner';
 
-import { recoverToken, recoverUserId, deleteSessionSTO } from '../../utils/util-functions';
+import { recoverToken, recoverUserId, deleteSessionSTO, today } from '../../utils/util-functions';
 
 import untilNowApi from '../../utils/until-now-api-client';
 
@@ -26,7 +26,7 @@ class Items extends React.Component {
 	}
 
 	componentDidMount() {
-		untilNowApi.listItemsInCollection(this.props.match.params.idOfCollection,recoverUserId() , recoverToken())
+		untilNowApi.listItemsInCollection(this.props.match.params.idOfCollection, recoverUserId(), recoverToken())
 			.then(res => this.refreshList(res))
 			.catch(() => {
 				deleteSessionSTO();
@@ -97,6 +97,7 @@ class Items extends React.Component {
 									notes={item.notes}
 									reference={item.refNumber}
 									title={item.name}
+									today={today()}
 								/>
 							);
 						})
@@ -105,10 +106,11 @@ class Items extends React.Component {
 				{searching}
 				{noDataToShow}
 				<ModalDelete
-					textForBody={'Are you sure you want to delete this equipment?'}
 					dataForModalDelete={this.state.dataForModalDelete}
 					target={'item'}
-				/>
+				>
+					<p>Are you sure you want to delete this equipment?</p>
+				</ModalDelete>
 			</section>
 		);
 	}
