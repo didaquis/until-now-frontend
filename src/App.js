@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route, HashRouter } from 'react-router-dom';
 
-import Nav from './components/Nav';
+import Nav from './components/navbar/Nav';
 import Home from './components/home/Home';
 import LoginForm from './components/login/LoginForm';
 import Collections from './components/collections/Collections';

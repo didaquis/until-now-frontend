@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink, withRouter } from 'react-router-dom';
 
-import { recoverSessionSTO, deleteSessionSTO } from '../utils/util-functions';
+import { recoverSessionSTO, deleteSessionSTO } from '../../utils/util-functions';
 
 class NavbarLoginButton extends React.Component {
 	constructor() {
