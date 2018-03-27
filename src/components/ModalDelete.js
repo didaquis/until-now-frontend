@@ -4,6 +4,7 @@ import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { recoverToken, deleteSessionSTO } from '../utils/util-functions';
 
 import untilNowApi from '../utils/until-now-api-client';
+import ButtonSpinner from './Spinner/ButtonSpinner';
 
 class ModalDelete extends React.Component {
 	constructor(props) {
@@ -11,7 +12,8 @@ class ModalDelete extends React.Component {
 		this.state = {
 			modal: false,
 			dataForModalDelete: '',
-			target: ''
+			target: '',
+			buttonSpinnerVisible: false
 		};
 
 		this.toggle = this.toggle.bind(this);
@@ -32,16 +34,16 @@ class ModalDelete extends React.Component {
 
 
 	handlerSubmit = () => {
+		this.setState({ buttonSpinnerVisible: true });
 		if (this.state.target === 'collection') {
 			untilNowApi.deleteCollection(this.state.dataForModalDelete, recoverToken())
 				.then(res => {
 					if (res.status === 'OK') {
 						window.location.reload();
-					} else {
-						console.log(res);
 					}
 				})
 				.catch(() => {
+					this.setState({ buttonSpinnerVisible: false });
 					deleteSessionSTO();
 					this.props.history.push('/login');
 				});
@@ -51,11 +53,10 @@ class ModalDelete extends React.Component {
 				.then(res => {
 					if (res.status === 'OK') {
 						window.location.reload();
-					} else {
-						console.log(res);
 					}
 				})
 				.catch(() => {
+					this.setState({ buttonSpinnerVisible: false });
 					deleteSessionSTO();
 					this.props.history.push('/login');
 				});
@@ -68,12 +69,18 @@ class ModalDelete extends React.Component {
 				<Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
 					<ModalHeader toggle={this.toggle}>Delete</ModalHeader>
 					<ModalBody>
-						<p>{this.props.textForBody}</p>
+						{this.props.children}
 					</ModalBody>
 					<ModalFooter>
 						<button type="button" className="btn btn-secondary mr-auto" onClick={this.toggle}>Close</button>
 						<form onSubmit={(e) => { e.preventDefault(); this.handlerSubmit(); }}>
-							<button type="submit" className="btn btn-danger">Delete</button>
+							<button
+								type="submit"
+								className="btn btn-danger"
+							>
+								<ButtonSpinner visible={this.state.buttonSpinnerVisible} />
+								Delete
+							</button>
 						</form>
 					</ModalFooter>
 				</Modal>

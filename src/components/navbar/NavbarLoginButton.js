@@ -3,7 +3,7 @@ import { NavLink, withRouter } from 'react-router-dom';
 
 import { recoverSessionSTO, deleteSessionSTO } from '../../utils/util-functions';
 
-class LoginButton extends React.Component {
+class NavbarLoginButton extends React.Component {
 	constructor() {
 		super();
 		this.state = {
@@ -47,4 +47,4 @@ class LoginButton extends React.Component {
 	}
 }
 
-export default withRouter(LoginButton);
+export default withRouter(NavbarLoginButton);
