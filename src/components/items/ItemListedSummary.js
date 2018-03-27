@@ -1,10 +1,13 @@
 import React from 'react';
-import { formatDate, calculateNumberForProgress, calculateColorOfProgressBar } from '../../utils/util-functions';
+import { formatDate, calculateNumberForProgress, calculateColorOfProgressBar, getDateReadable } from '../../utils/util-functions';
 
 import ProgressBar from './ProgressBar';
 
 
 function ItemListedSummary(props) {
+	const readableStart = getDateReadable(props.dateStart);
+	const readableEnd = getDateReadable(props.dateEnd);
+
 	const progressNumber = calculateNumberForProgress(formatDate(props.dateStart), props.today, formatDate(props.dateEnd));
 	const colorOfProgressBar = calculateColorOfProgressBar(progressNumber);
 
@@ -20,7 +23,8 @@ function ItemListedSummary(props) {
 					<ProgressBar
 						colorOfProgressBar={colorOfProgressBar}
 						progressNumber={progressNumber}
-						dateEnd={props.dateEnd}
+						readableStart={readableStart}
+						readableEnd={readableEnd}
 					/>
 				</tbody>
 			</table>
