@@ -1,6 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import NavbarLoginButton from './NavbarLoginButton';
+import NavMainLinksLG from './NavMainLinksLG';
+import NavMainLinksXS from './NavMainLinksXS';
 
 import { recoverToken } from '../utils/util-functions';
 
@@ -21,34 +23,17 @@ function Nav() {
 					<span className="navbar-toggler-icon"></span>
 				</button>
 				<div className="collapse navbar-collapse" id="navbarCollapse">
-
 					{
 						(recoverToken()) ?
 							(
-								<ul className="navbar-nav mr-auto">
-									<li className="nav-item">
-										<NavLink
-											exact
-											to="/collections"
-											activeClassName="active"
-											className="nav-link"
-											replace
-										>
-											Collections
-										</NavLink>
-									</li>
-									<li className="nav-item">
-										<NavLink
-											exact
-											to="/summary"
-											activeClassName="active"
-											className="nav-link"
-											replace
-										>
-											Equipment summary
-										</NavLink>
-									</li>
-								</ul>
+								<span className="mr-auto">
+									<span className="d-none d-lg-block mr-auto">
+										<NavMainLinksLG />
+									</span>
+									<span className="d-md-none mr-auto">
+										<NavMainLinksXS />
+									</span>
+								</span>
 							)
 							:
 							(
