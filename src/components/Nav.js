@@ -1,8 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import NavbarLoginButton from './NavbarLoginButton';
-import NavMainLinksLG from './NavMainLinksLG';
-import NavMainLinksXS from './NavMainLinksXS';
+import NavMainLinks from './NavMainLinks';
 
 import { recoverToken } from '../utils/util-functions';
 
@@ -15,33 +14,34 @@ function Nav() {
 					className="navbar-toggler"
 					type="button"
 					data-toggle="collapse"
-					data-target="#navbarCollapse"
+					data-target="#navbarCollapseXS"
 					aria-controls="navbarCollapse"
 					aria-expanded="false"
 					aria-label="Toggle navigation"
 				>
 					<span className="navbar-toggler-icon"></span>
 				</button>
-				<div className="collapse navbar-collapse" id="navbarCollapse">
-					{
-						(recoverToken()) ?
-							(
-								<span className="mr-auto">
-									<span className="d-none d-lg-block mr-auto">
-										<NavMainLinksLG />
-									</span>
-									<span className="d-md-none mr-auto">
-										<NavMainLinksXS />
-									</span>
-								</span>
-							)
-							:
-							(
-								<ul className="navbar-nav mr-auto"></ul>
-							)
-					}
-					<NavbarLoginButton />
-				</div>
+
+					<div className="d-md-none collapse navbar-collapse" id="navbarCollapseXS" data-toggle="collapse" data-target="#navbarCollapseXS">
+						{
+							(recoverToken()) ?
+								(<NavMainLinks />)
+								:
+								(<ul className="navbar-nav mr-auto"></ul>)
+						}
+						<NavbarLoginButton />
+					</div>
+
+					<div className="d-none d-md-block collapse navbar-collapse" >
+						{
+							(recoverToken()) ?
+								(<NavMainLinks />)
+								:
+								(<ul className="navbar-nav mr-auto"></ul>)
+						}
+						<NavbarLoginButton />
+					</div>
+
 			</nav>
 		</div>
 	);

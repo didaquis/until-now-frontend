@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-function NavMainLinksLG() {
+function NavMainLinks() {
 	return (
 		<ul className="navbar-nav mr-auto">
 			<li className="nav-item">
@@ -30,4 +30,4 @@ function NavMainLinksLG() {
 	);
 }
 
-export default NavMainLinksLG;
+export default NavMainLinks;
