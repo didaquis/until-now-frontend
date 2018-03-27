@@ -1,5 +1,6 @@
 import React from 'react';
 import MessageValidateForm from '../MessageValidateForm';
+import ButtonSpinner from '../Spinner/ButtonSpinner';
 
 import { saveSessionSTO, deleteSessionSTO, recoverToken } from '../../utils/util-functions';
 
@@ -11,7 +12,8 @@ class LoginForm extends React.Component {
 		this.state = {
 			usernameInput: '',
 			passwordInput: '',
-			wrongCredentials: false
+			wrongCredentials: false,
+			buttonSpinnerVisible: false
 		};
 	}
 
@@ -27,6 +29,7 @@ class LoginForm extends React.Component {
 	}
 
 	handlerSubmit = () => {
+		this.setState({ wrongCredentials: false, buttonSpinnerVisible: true });
 		untilNowApi.loginUser(this.state.usernameInput, this.state.passwordInput)
 			.then(res => {
 				if (res.status === 'OK') {
@@ -37,7 +40,7 @@ class LoginForm extends React.Component {
 				return null;
 			})
 			.catch(() => {
-				this.setState({ wrongCredentials: true });
+				this.setState({ wrongCredentials: true, buttonSpinnerVisible: false });
 				deleteSessionSTO();
 			});
 	}
@@ -97,7 +100,13 @@ class LoginForm extends React.Component {
 										}
 									</div>
 
-									<button type="submit" className="btn btn-success float-right">Login</button>
+									<button
+										type="submit"
+										className="btn btn-success float-right"
+									>
+										<ButtonSpinner visible={this.state.buttonSpinnerVisible} />
+										Login
+									</button>
 									{
 										(this.state.wrongCredentials) ?
 											(
