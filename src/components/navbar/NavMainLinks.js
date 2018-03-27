@@ -12,7 +12,7 @@ function NavMainLinks() {
 					className="nav-link"
 					replace
 				>
-					Collections
+					Manage collections
 				</NavLink>
 			</li>
 			<li className="nav-item">

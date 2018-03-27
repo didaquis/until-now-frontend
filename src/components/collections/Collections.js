@@ -77,7 +77,7 @@ class Collections extends React.Component {
 		return (
 			<section>
 				<Header
-					title={'Collections'}
+					title={'Manage collections'}
 					subtitle={'View and manage all your equipment collections'}
 				/>
 				<PanelNewCollection
