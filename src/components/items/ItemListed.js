@@ -1,11 +1,16 @@
 import React from 'react';
-import { formatDate, calculateNumberForProgress, calculateColorOfProgressBar } from '../../utils/util-functions';
+import { formatDate, calculateNumberForProgress, calculateColorOfProgressBar, getDateReadable } from '../../utils/util-functions';
 
 import ProgressBar from './ProgressBar';
 
 
 function ItemListed(props) {
-	const progressNumber = calculateNumberForProgress(formatDate(props.dateStart), props.today, formatDate(props.dateEnd));
+	const readableStart = getDateReadable(props.dateStart);
+	const readableEnd = getDateReadable(props.dateEnd);
+
+	const dateStartFormated = formatDate(props.dateStart);
+	const dateEndFormated = formatDate(props.dateEnd);
+	const progressNumber = calculateNumberForProgress(dateStartFormated, props.today, dateEndFormated);
 	const colorOfProgressBar = calculateColorOfProgressBar(progressNumber);
 
 	return (
@@ -19,11 +24,11 @@ function ItemListed(props) {
 				<tbody>
 					<tr>
 						<th scope="row">Date Start</th>
-						<td>{formatDate(props.dateStart)}</td>
+						<td>{dateStartFormated}</td>
 					</tr>
 					<tr>
 						<th scope="row">Date End</th>
-						<td>{formatDate(props.dateEnd)}</td>
+						<td>{dateEndFormated}</td>
 					</tr>
 					<tr>
 						<th scope="row">Reference</th>
@@ -33,7 +38,12 @@ function ItemListed(props) {
 						<th scope="row">Notes</th>
 						<td>{props.notes}</td>
 					</tr>
-					<ProgressBar colorOfProgressBar={colorOfProgressBar} progressNumber={progressNumber} />
+					<ProgressBar
+						colorOfProgressBar={colorOfProgressBar}
+						progressNumber={progressNumber}
+						readableStart={readableStart}
+						readableEnd={readableEnd}
+					/>
 					<tr>
 						<th scope="row" colSpan="2">
 							<button type="button" className="btn btn-outline-danger btn-sm mr-2" onClick={(e) => { e.preventDefault(); props.handlerOnClickButtonForOpenModal(props.id); }} >Delete equipment</button>
