@@ -2,6 +2,7 @@ import React from 'react';
 
 import DateSelector from './DateSelector';
 import MessageValidateForm from '../MessageValidateForm';
+import ButtonSpinner from '../Spinner/ButtonSpinner';
 
 import { recoverToken, recoverUserId, deleteSessionSTO } from '../../utils/util-functions';
 
@@ -16,7 +17,8 @@ class PanelNewItem extends React.Component {
 			inputEnd: '',
 			inputReference: '',
 			inputNotes: '',
-			idOfCollection: ''
+			idOfCollection: '',
+			buttonSpinnerVisible: false
 		};
 	}
 
@@ -35,15 +37,16 @@ class PanelNewItem extends React.Component {
 			&& (new Date(this.state.inputStart) < new Date(this.state.inputEnd))
 		) {
 			// Dates pass the validations...
+			this.setState({ buttonSpinnerVisible: true });
 			untilNowApi.createItem(this.state.inputName, this.state.inputStart, this.state.inputEnd, this.state.inputReference, this.state.inputNotes, this.state.idOfCollection, recoverUserId(), recoverToken())
 				.then(res => {
 					if (res.status === 'OK') {
 						window.location.reload();
-					} else {
-						console.log(res);
 					}
+					this.setState({ buttonSpinnerVisible: false });
 				})
 				.catch(() => {
+					this.setState({ buttonSpinnerVisible: false });
 					deleteSessionSTO();
 					this.props.history.push('/login');
 				});
@@ -149,7 +152,13 @@ class PanelNewItem extends React.Component {
 											</div>
 										</div>
 										<button onClick={(e) => { e.preventDefault(); this.handlerClose(); }} className="btn btn-secondary">Close</button>
-										<button type="submit" className="btn btn-success float-right">Create</button>
+										<button
+											type="submit"
+											className="btn btn-success float-right"
+										>
+											<ButtonSpinner visible={this.state.buttonSpinnerVisible} />
+											Create
+										</button>
 									</form>
 								</div>
 							</div>
