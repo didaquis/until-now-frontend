@@ -36,7 +36,6 @@ class LoginForm extends React.Component {
 					saveSessionSTO('userData', res.data);
 					this.props.history.push('/collections');
 				}
-				deleteSessionSTO();
 				return null;
 			})
 			.catch(() => {
