@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import LoginButton from './login/LoginButton';
+import NavbarLoginButton from './NavbarLoginButton';
 
 import { recoverToken } from '../utils/util-functions';
 
@@ -55,7 +55,7 @@ function Nav() {
 								<ul className="navbar-nav mr-auto"></ul>
 							)
 					}
-					<LoginButton />
+					<NavbarLoginButton />
 				</div>
 			</nav>
 		</div>
