@@ -8,7 +8,9 @@ import { recoverToken } from '../../utils/util-functions';
 function NavMain() {
 	return (
 		<nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark nav-padd">
-			<NavLink className="navbar-brand" exact to="/" replace data-toggle="collapse" data-target="#navbarCollapse">Until Now</NavLink>
+			<span data-toggle="collapse" data-target="#navbarCollapse">
+			<NavLink className="navbar-brand" exact to="/" replace>Until Now</NavLink>
+			</span>
 			<button
 				className="navbar-toggler"
 				type="button"
