@@ -10,7 +10,8 @@ class LoginForm extends React.Component {
 		super();
 		this.state = {
 			usernameInput: '',
-			passwordInput: ''
+			passwordInput: '',
+			wrongCredentials: false
 		};
 	}
 
@@ -31,13 +32,12 @@ class LoginForm extends React.Component {
 				if (res.status === 'OK') {
 					saveSessionSTO('userData', res.data);
 					this.props.history.push('/collections');
-				} else {
-					console.log(res);
-					deleteSessionSTO();
 				}
+				deleteSessionSTO();
 				return null;
 			})
 			.catch(() => {
+				this.setState({ wrongCredentials: true });
 				deleteSessionSTO();
 			});
 	}
@@ -98,6 +98,18 @@ class LoginForm extends React.Component {
 									</div>
 
 									<button type="submit" className="btn btn-success float-right">Login</button>
+									{
+										(this.state.wrongCredentials) ?
+											(
+												<div className="row">
+													<small className="p-2 ml-3 form-text bg-danger text-white">
+														Wrong username and / or password!
+													</small>
+												</div>
+											)
+											:
+											(null)
+									}
 								</form>
 							</div>
 						</div>
