@@ -9,7 +9,7 @@ function NavMain() {
 	return (
 		<nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark nav-padd">
 			<span data-toggle="collapse" data-target="#navbarCollapse">
-			<NavLink className="navbar-brand" exact to="/" replace>Until Now</NavLink>
+				<NavLink className="navbar-brand" exact to="/" replace>Until Now</NavLink>
 			</span>
 			<button
 				className="navbar-toggler"
