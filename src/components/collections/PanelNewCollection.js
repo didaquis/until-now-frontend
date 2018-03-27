@@ -1,6 +1,7 @@
 import React from 'react';
 
 import MessageValidateForm from '../MessageValidateForm';
+import ButtonSpinner from '../Spinner/ButtonSpinner';
 
 import { recoverToken, recoverUserId, deleteSessionSTO } from '../../utils/util-functions';
 
@@ -10,7 +11,8 @@ class PanelNewCollection extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			nameCollectionInput: ''
+			nameCollectionInput: '',
+			buttonSpinnerVisible: false
 		};
 	}
 
@@ -20,15 +22,16 @@ class PanelNewCollection extends React.Component {
 	}
 
 	handlerSubmit = () => {
+		this.setState({ buttonSpinnerVisible: true });
 		untilNowApi.createCollection(this.state.nameCollectionInput, recoverUserId(), recoverToken())
 			.then(res => {
 				if (res.status === 'OK') {
 					window.location.reload();
-				} else {
-					console.log(res);
 				}
+				this.setState({ buttonSpinnerVisible: false });
 			})
 			.catch(() => {
+				this.setState({ buttonSpinnerVisible: false });
 				deleteSessionSTO();
 				this.props.history.push('/login');
 			});
@@ -74,7 +77,13 @@ class PanelNewCollection extends React.Component {
 										</div>
 										<button onClick={(e) => { e.preventDefault(); this.handlerClose(); }} className="btn btn-secondary">Close
 										</button>
-										<button type="submit" className="btn btn-success float-right">Create</button>
+										<button
+											type="submit"
+											className="btn btn-success float-right"
+										>
+											<ButtonSpinner visible={this.state.buttonSpinnerVisible} />
+											Create
+										</button>
 									</form>
 								</div>
 							</div>

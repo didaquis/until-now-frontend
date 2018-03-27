@@ -1,5 +1,6 @@
 import React from 'react';
 import MessageValidateForm from '../MessageValidateForm';
+import ButtonSpinner from '../Spinner/ButtonSpinner';
 
 import { saveSessionSTO, deleteSessionSTO, recoverToken } from '../../utils/util-functions';
 
@@ -10,7 +11,9 @@ class LoginForm extends React.Component {
 		super();
 		this.state = {
 			usernameInput: '',
-			passwordInput: ''
+			passwordInput: '',
+			wrongCredentials: false,
+			buttonSpinnerVisible: false
 		};
 	}
 
@@ -26,18 +29,17 @@ class LoginForm extends React.Component {
 	}
 
 	handlerSubmit = () => {
+		this.setState({ wrongCredentials: false, buttonSpinnerVisible: true });
 		untilNowApi.loginUser(this.state.usernameInput, this.state.passwordInput)
 			.then(res => {
 				if (res.status === 'OK') {
 					saveSessionSTO('userData', res.data);
 					this.props.history.push('/collections');
-				} else {
-					console.log(res);
-					deleteSessionSTO();
 				}
 				return null;
 			})
 			.catch(() => {
+				this.setState({ wrongCredentials: true, buttonSpinnerVisible: false });
 				deleteSessionSTO();
 			});
 	}
@@ -97,7 +99,25 @@ class LoginForm extends React.Component {
 										}
 									</div>
 
-									<button type="submit" className="btn btn-success float-right">Login</button>
+									<button
+										type="submit"
+										className="btn btn-success float-right"
+									>
+										<ButtonSpinner visible={this.state.buttonSpinnerVisible} />
+										Login
+									</button>
+									{
+										(this.state.wrongCredentials) ?
+											(
+												<div className="row">
+													<small className="p-2 ml-3 form-text bg-danger text-white">
+														Wrong username and / or password!
+													</small>
+												</div>
+											)
+											:
+											(null)
+									}
 								</form>
 							</div>
 						</div>
