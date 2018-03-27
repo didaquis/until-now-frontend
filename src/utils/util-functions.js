@@ -15,6 +15,20 @@ function formatDate(date) {
 	return [year, month, day].join('-');
 }
 
+
+/**
+ * Convert Date object to this format (March 2018)
+ * @param {Date} date
+ * @returns {string}
+ */
+function getDateReadable(date) {
+	const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+	const d = new Date(date);
+	const month = monthNames[d.getMonth()];
+	const year = d.getFullYear();
+	return `${month} ${year}`;
+}
+
 /**
  * Create a new Date
  * @returns {string} Date object (YYYY-MM-DD)
@@ -135,6 +149,7 @@ function recoverUserId() {
 
 module.exports = {
 	formatDate,
+	getDateReadable,
 	today,
 	calculateNumberForProgress,
 	calculateColorOfProgressBar,
