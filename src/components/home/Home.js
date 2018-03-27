@@ -25,8 +25,8 @@ class Home extends React.Component {
 				/>
 				<Features
 					reverse={false}
-					title={'Visualize straight away the age of your equipment.'}
-					subtitle={'The color bar shows its renewal date.'}
+					title={'The color bar shows its renewal date.'}
+					subtitle={'Visualize straight away the age of your equipment.'}
 					text={'Register all your equipment indicating the date of purchase and the expected replacement date. “Until Now” calculates how much time has passed and it’ll show you'}
 					img={require('../../images/features_2.png')}
 				/>
