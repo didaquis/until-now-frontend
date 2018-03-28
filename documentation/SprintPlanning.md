@@ -62,9 +62,9 @@ Gestión de tareas: [Kanban](https://trello.com/b/x0Vl2LAY/until-now)
 - [x] TDD sistema de login
 #### Miércoles
 - [x] Implementar sistema de login y logout en frontend
-- [ ] Testing
-- [ ] HotFixing
-- [ ] Revisar la documentación del proyecto
-- [ ] Deploy sprint
+- [x] Testing
+- [x] HotFixing
+- [x] Revisar la documentación del proyecto
+- [x] Deploy sprint
 #### Jueves
-- [ ] Presentación del proyecto 🚀 🎉 
+* Presentación del proyecto 🚀 🎉 
