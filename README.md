@@ -1,4 +1,4 @@
-# Until Now ⌛️
+# Until Now ⌛️  
 En algunas actividades, como en el submarinismo o la escalada, se utilza material técnico especializado y diseñado únicamente para tal fin. Los fabricantes de dicho material establecen una duración máxima de uso para estos productos. Exceder la vida útil de los elementos usados en actividades de riesgo puede tener consecuencias letales.
 
 Until Now te ayuda a gestionar la fecha de renovación del material técnico. La aplicación te permite visualizar rápidamente que material debes descartar y/o renovar próximamente.  
@@ -10,6 +10,10 @@ Previsualización vista rápida de items.
 
 ![Visualización detalle de los items](documentation/preview_2.png)  
 Visualización en detalle de los items.  
+
+
+[Slides presentación](https://docs.google.com/presentation/d/1wR7b1NG2EA7UwatwS05HfbMU5Qd-fRm0PDvkmQIIeW0/edit?usp=sharing)  
+
 
 ## Demo 
 Puedes ver una demo del proyecto en **https://until-now.surge.sh**  
@@ -41,12 +45,13 @@ Para hacer funcionar la aplicación, debes renombrar el fichero `_env` por `.env
 
 
 ## Documentación del proyecto 
-Estructura de la base de datos:  
+Casos de uso:  
+![Casos de uso](documentation/use_case.png)  
 
+Estructura de la base de datos:  
 ![Base de datos](documentation/database.png)  
 
-Arquitectura del proyecto:  
-
+Diagrama de bloques:  
 ![Arquitectura](documentation/main.png)   
 
 ------ 
