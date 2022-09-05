@@ -16,11 +16,12 @@ Visualización en detalle de los items.
 
 
 ## Demo 
-Puedes ver una demo del proyecto en **https://until-now.surge.sh**  
+~~Puedes ver una demo del proyecto en **https://until-now.surge.sh**~~  
 
-* usuario: demo
-* password: ABCabc1234
+* ~~usuario: demo~~
+* ~~password: ABCabc1234~~
 
+> **NOTA:** Actualmente la demo se encuentra no disponible.
 
 
 ## Until Now (frontend) 
